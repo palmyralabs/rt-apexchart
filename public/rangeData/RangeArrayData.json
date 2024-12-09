@@ -1,0 +1,30 @@
+{
+	"result": [
+		{
+            "name": "Analysis",
+            "fromDate": "2019-02-27",
+            "toDate": "2019-03-04"
+			
+		},
+		{
+            "name": "Design",
+            "fromDate": "2019-03-04",
+            "toDate": "2019-03-08"
+		},
+		{
+            "name": "Coding",
+            "fromDate": "2019-03-07",
+            "toDate": "2019-03-10"
+		},
+		{
+			"name": "Testing",
+            "fromDate": "2019-03-08",
+            "toDate": "2019-03-12"
+		},
+		{
+			"name": "Deployment",
+            "fromDate": "2019-03-12",
+            "toDate": "2019-03-17"
+		}
+	]
+}
