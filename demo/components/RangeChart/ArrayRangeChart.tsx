@@ -1,16 +1,18 @@
 import ReactApexChart from "react-apexcharts";
 import moment from "moment";
-import UseRangeChart from "../../RangeConverter/UseRangeChart";
+import UseRangeChart from "../../../src/palmyra/apexchart/RangeConverter/UseRangeChart";
 
 
-const KeyedRangeChart = () => {
+
+const ArrayRangeChart = () => {
     const { chartData} = UseRangeChart({
-        endpoint: '/rangeData/RangeKeyedValue.json',
+        endpoint: '/rangeData/RangeArrayData.json',
         options: {
-            type: "keyedValue", x: 'name', y1: 'fromDate', y2: 'toDate',
+            type: "array", x: 'name', y1: 'fromDate', y2: 'toDate',
             colors: ['#9acd32', '#c71585', '#8a2be2', '#ff00ff', '#ff6347', '#48d1cc', '#4169e1', '#9acd32', '#663399']
         }
     },)
+    
     const options: any = {
         series: [{
             data: chartData
@@ -18,7 +20,8 @@ const KeyedRangeChart = () => {
 
         chart: {
             height: 350,
-            type: 'rangeBar'
+            type: 'rangeBar',
+            redrawOnWindowResize: true
         },
         plotOptions: {
             bar: {
@@ -55,12 +58,11 @@ const KeyedRangeChart = () => {
             }
         }
     }
-
-
     return (
         <div id="chart">
             <ReactApexChart options={options} series={options.series} type="rangeBar" height={350} width={600} />
+            {/* <button onClick={refresh}>Refresh Chart</button> */}
         </div>
     );
 }
-export default KeyedRangeChart
+export default ArrayRangeChart

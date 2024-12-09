@@ -1,13 +1,13 @@
 import ReactApexChart from "react-apexcharts";
-import useChart from "../../conveter/useChart";
+import useChart from "../../../src/palmyra/apexchart/conveter/useChart";
 
 
-const KeyBarChart = () => {
+const KeyedBarChart = () => {
 
     const { xAxis, yAxis, fillColor } = useChart({
-        endpoint: '/data/KeyValueData.json',
+        endpoint: '/data/KeyedObjectData.json',
         options: {
-          type: "keyValue", x: 'month', y: 'value',
+          type: "keyedValue", x: 'month', y: 'value',
           colors: ['#9acd32', '#c71585', '#8a2be2', '#ff00ff', '#ff6347', '#48d1cc', '#4169e1', '#9acd32', '#663399']
         }
       },)
@@ -33,7 +33,7 @@ const KeyBarChart = () => {
         chart: {
           height: 500,
           type: 'bar',
-          boxshadow: "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px"
+        //   boxshadow: "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px"
         },
         colors: fillColor,
         plotOptions: {
@@ -97,4 +97,4 @@ const KeyBarChart = () => {
       );
     
     };
-export default KeyBarChart;
+export default KeyedBarChart;

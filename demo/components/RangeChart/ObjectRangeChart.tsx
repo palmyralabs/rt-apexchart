@@ -1,18 +1,17 @@
 import ReactApexChart from "react-apexcharts";
 import moment from "moment";
-import UseRangeChart from "../../RangeConverter/UseRangeChart";
+import UseRangeChart from "../../../src/palmyra/apexchart/RangeConverter/UseRangeChart";
 
 
-
-const ArrayRangeChart = () => {
+const ObjectRangeChart = () => {
     const { chartData} = UseRangeChart({
-        endpoint: '/rangeData/RangeArrayData.json',
+        // endpoint: 'api/palmyra/reports/project/dashboard/chart/range',
+        endpoint: '/rangeData/RangeObjectData.json',
         options: {
-            type: "array", x: 'name', y1: 'fromDate', y2: 'toDate',
+            type: "object", x: 'name', y1: 'fromDate', y2: 'toDate',
             colors: ['#9acd32', '#c71585', '#8a2be2', '#ff00ff', '#ff6347', '#48d1cc', '#4169e1', '#9acd32', '#663399']
         }
     },)
-    
     const options: any = {
         series: [{
             data: chartData
@@ -20,8 +19,7 @@ const ArrayRangeChart = () => {
 
         chart: {
             height: 350,
-            type: 'rangeBar',
-            redrawOnWindowResize: true
+            type: 'rangeBar'
         },
         plotOptions: {
             bar: {
@@ -58,11 +56,12 @@ const ArrayRangeChart = () => {
             }
         }
     }
+
+
     return (
         <div id="chart">
             <ReactApexChart options={options} series={options.series} type="rangeBar" height={350} width={600} />
-            {/* <button onClick={refresh}>Refresh Chart</button> */}
         </div>
     );
 }
-export default ArrayRangeChart
+export default ObjectRangeChart

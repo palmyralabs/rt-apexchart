@@ -1,13 +1,12 @@
 import ReactApexChart from "react-apexcharts";
-import useChart from "../../conveter/useChart";
+import useChart from "../../../src/palmyra/apexchart/conveter/useChart";
 
-const ArrayRadarChart = () => {
+const ObjectRadarChart = () => {
 
     const { xAxis, yAxis } = useChart({
-        endpoint: '/data/ArrayData.json',
+        endpoint: '/data/ObjectData.json',
         options: {
-          type: "array", x: 'month', y: 'value',
-        //   colors: ['#9acd32', '#c71585', '#8a2be2', '#ff00ff', '#ff6347', '#48d1cc', '#4169e1', '#9acd32', '#663399']
+          type: "object", x: 'month', y: 'value',
         }
       },)
 
@@ -39,4 +38,4 @@ const ArrayRadarChart = () => {
   );
 };
 
-export default ArrayRadarChart;
+export default ObjectRadarChart;

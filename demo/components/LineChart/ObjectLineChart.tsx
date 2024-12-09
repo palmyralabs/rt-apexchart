@@ -1,16 +1,18 @@
 
 import ReactApexChart from 'react-apexcharts';
-import useChart from '../../conveter/useChart';
+import useChart from '../../../src/palmyra/apexchart/conveter/useChart';
 
-const KeyLineChart = () => {
+const ObjectLineChart = () => {
     const { xAxis, yAxis, fillColor } = useChart({
-        endpoint: 'data/KeyValueData .json',
+        endpoint: 'data/ObjectData.json',
         options: {
-            type: "keyValue", x: 'month', y: 'value',
+            type: "object", x: 'month', y: 'value',
             // colors: ['#ff0000']
-        }  
+        }
     },)
 
+    console.log("xAxis", xAxis)
+    console.log("yAxis", yAxis)
 
     var options: any = {
         series: [{
@@ -53,4 +55,4 @@ const KeyLineChart = () => {
     );
 
 }
-export default KeyLineChart
+export default ObjectLineChart

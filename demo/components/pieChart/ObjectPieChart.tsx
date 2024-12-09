@@ -1,5 +1,5 @@
 import ReactApexChart from "react-apexcharts";
-import useChart from "../../conveter/useChart";
+import useChart from "../../../src/palmyra/apexchart/conveter/useChart";
 
 
 const ObjectPieChart = () => {

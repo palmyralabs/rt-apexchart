@@ -1,12 +1,13 @@
 import ReactApexChart from "react-apexcharts";
-import useChart from "../../conveter/useChart";
+import useChart from "../../../src/palmyra/apexchart/conveter/useChart";
 
 
-const KeyedPieChart = () => {
+const ArrayPieChart = () => {
+
   const { xAxis, yAxis, fillColor } = useChart({
-    endpoint: '/data/KeyedObjectData.json',
+    endpoint: '/data/ArrayData.json',
     options: {
-      type: "keyedValue", x: 'month', y: 'value',
+      type: "array", x: 'month', y: 'value',
       colors: ['#9acd32', '#c71585', '#8a2be2', '#ff00ff', '#ff6347', '#48d1cc', '#4169e1', '#9acd32', '#663399']
     }
   },)
@@ -33,7 +34,7 @@ const KeyedPieChart = () => {
           width: 200
         },
         legend: {
-          position: 'bottom'
+          position: 'top'
         }
       }
     }
@@ -46,4 +47,4 @@ const KeyedPieChart = () => {
   );
 };
 
-export default KeyedPieChart;
+export default ArrayPieChart;
