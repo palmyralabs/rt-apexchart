@@ -1,0 +1,109 @@
+import { FlexiApexChart } from "../../../src/main";
+
+
+
+const MultiLineChart = () => {
+
+    return (
+        <div id="chart">
+            <FlexiApexChart transformOptions={{
+                xKey: 'month', yKey: ['value', 'min', 'max'],
+                dataType: 'object'
+            }}
+                labels={['Value', 'min', 'max']}
+                data={data} type="bar"
+
+            />
+        </div>
+    );
+
+}
+export default MultiLineChart
+
+
+const data = {
+    "one": {
+        "value": 5,
+        "min": 4,
+        "values": 20,
+        "max": 2,
+        "month": "Jan"
+    },
+    "two": {
+        "value": 10,
+        "min": 3,
+        "values": 20,
+        "max": 3,
+        "month": "Feb"
+    },
+    "three": {
+        "value": 6,
+        "min": 6,
+        "values": 35,
+        "max": 11,
+        "month": "Mar"
+    },
+    "four": {
+        "value": 20,
+        "min": 8,
+        "values": 60,
+        "max": 14,
+        "month": "Apr"
+    },
+    "five": {
+        "value": 18,
+        "min": 26,
+        "values": 3,
+        "max": 6,
+        "month": "May"
+    },
+    "six": {
+        "value": 27,
+        "min": 8,
+        "values": 56,
+        "max": 1,
+        "month": "June"
+    },
+    "seven": {
+        "value": 10,
+        "min": 40,
+        "values": 9,
+        "max": 3,
+        "month": "July"
+    },
+    "eight": {
+        "value": 35,
+        "min": 22,
+        "values": 43,
+        "max": 2,
+        "month": "Agu"
+    },
+    "ninen": {
+        "value": 40,
+        "min": 13,
+        "values": 5,
+        "max": 4,
+        "month": "sept"
+    },
+    "ten": {
+        "value": 30,
+        "min": 19,
+        "values": 33,
+        "max": 1,
+        "month": "oct"
+    },
+    "leven": {
+        "value": 10,
+        "min": 40,
+        "values": 21,
+        "max": 5,
+        "month": "Nov"
+    },
+    "twelve": {
+        "value": 5,
+        "min": 3,
+        "max": 10,
+        "values": 54,
+        "month": "Dec"
+    }
+}
