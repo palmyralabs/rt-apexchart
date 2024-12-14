@@ -1,4 +1,3 @@
-import { getAccessor } from "./common";
 import { accessor, IChartConsumerOptions, ITransformOptions } from "./types";
 
 
