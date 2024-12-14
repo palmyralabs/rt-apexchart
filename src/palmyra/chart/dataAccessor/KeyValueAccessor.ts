@@ -11,13 +11,12 @@ const generateKeyValueAccessors = (options: ITransformOptions): IChartConsumerOp
 }
 
 const getXKeyAccessor = (options: ITransformOptions): accessor<any> => {
-    const xKey = options.xKey || 'key';
-    return getAccessor(xKey);
+    return (d: any, k?: string) => k;
 }
 
 
 const getYKeyAccessors = (options: ITransformOptions): accessor<any>[] => {
-    return [(d: any, k?: string) => d[k]];
+    return [(d: any, k?: string) => d];
 }
 
 export default generateKeyValueAccessors;

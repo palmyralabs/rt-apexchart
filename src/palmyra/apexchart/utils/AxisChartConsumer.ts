@@ -23,7 +23,7 @@ const getChartConsumer = (options: IChartConsumerOptions): DataConsumer<any, any
     };
 
     const processRow = (v: any, _idx: number, key?: string) => {
-        const xValue = xKeyAccessor(v);
+        const xValue = xKeyAccessor(v, key);
         yKeyAccessors.forEach((y, i) => {
             const yValue = y(v, key);
             const data: dataType = { x: xValue, y: yValue };

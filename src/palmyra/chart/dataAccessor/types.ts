@@ -10,6 +10,10 @@ interface ITransformOptions {
     dataType?: 'object' | 'array' | 'keyValue';
 }
 
+interface ISeriesOptions extends Omit<ApexAxisChartSeries, 'data'>{
+
+}
+
 
 interface IChartConsumerOptions {
     xKeyAccessor: accessor<ResultType>,
@@ -29,4 +33,4 @@ type LabelAccessor = string | accessor<string>;
 
 export type { accessor, ResultType, AttributeAccessor, LabelAccessor, ITransformOptions }
 
-export type { IChartConsumerOptions }
+export type { IChartConsumerOptions, ISeriesOptions }

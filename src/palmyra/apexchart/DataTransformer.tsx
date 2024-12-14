@@ -1,5 +1,5 @@
-import { getArrayTransformer, getObjectTransformer } from "@palmyralabs/ts-utils";
-import { ITransformOptions } from "../chart/dataAccessor/types";
+import { DataTransformer, getArrayTransformer, getObjectTransformer } from "@palmyralabs/ts-utils";
+import { ISeriesOptions, ITransformOptions } from "../chart/dataAccessor/types";
 import { generateAccessors } from "../chart/dataAccessor/AccessorGenerator";
 import { getChartConsumer } from "./utils/AxisChartConsumer";
 
@@ -9,7 +9,7 @@ const getConsumer = (options: ITransformOptions) => {
     return getChartConsumer(consumerOptions);
 }
 
-const useDataTransformer = (options: ITransformOptions) => {
+const useDataTransformer = (options: ITransformOptions, seriesOptions?: ISeriesOptions[]): DataTransformer<any, any> => {
     const consumer = getConsumer(options);
     const dataType = options.dataType || 'array';
     if (dataType == 'array')
