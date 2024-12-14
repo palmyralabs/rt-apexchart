@@ -1,7 +1,7 @@
 
 interface ITransformOptions {
     xKey?: AttributeAccessor,
-    yKey: AttributeAccessor | AttributeAccessor[],
+    yKey?: AttributeAccessor | AttributeAccessor[],
     xLabel?: LabelAccessor;
     yLabel?: LabelAccessor[] | LabelAccessor;
     groupKey?: AttributeAccessor;
