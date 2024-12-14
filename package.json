@@ -13,12 +13,14 @@
     "test": "vitest"
   },
   "peerDependencies": {
-    "@palmyralabs/ts-utils": "^0.2.0",
     "apexcharts": "^4.2.0",
     "react": "^18.3.1"
   },
   "devDependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@eslint/js": "^9.13.0",
+    "@mui/icons-material": "^6.2.0",
     "@mui/material": "^6.1.7",
     "@types/node": "^22.10.1",
     "@types/react": "^18.3.12",
@@ -26,14 +28,19 @@
     "@vitejs/plugin-react": "^4.3.3",
     "@vitejs/plugin-react-swc": "^3.7.2",
     "axios": "^1.7.7",
-    "eslint": "^9.13.0",
+    "eslint": "^9.13.0",    
+    "@palmyralabs/ts-utils": "^0.2.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
+    "@palmyralabs/palmyra-wire": "^1.1.1",
+    "@palmyralabs/rt-forms": "github:palmyralabs/rt-forms",
+    "@palmyralabs/rt-forms-mui": "github:palmyralabs/rt-forms-mui",
     "glob": "^11.0.0",
     "globals": "^15.11.0",
     "moment": "^2.30.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
     "react-router-dom": "^6.28.0",
     "serve-static": "^1.15.0",
     "typescript": "^5.7.2",
@@ -45,6 +52,8 @@
     "vitest": "^2.1.8"
   },
   "overrides": {
-    "glob": "^11.0.0"
+    "glob": "^11.0.0",
+    "axios": "^1.7.7",
+    "@palmyralabs/ts-utils": "^0.2.0"
   }
 }

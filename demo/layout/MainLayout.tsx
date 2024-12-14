@@ -1,11 +1,12 @@
+import { Box, CssBaseline } from "@mui/material";
 import { Outlet } from "react-router-dom";
-import { Box, CssBaseline, Toolbar } from "@mui/material";
 
-import Topbar from "./Topbar";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "usehooks-ts";
-import DynamicMenu from "../../components/DynamicMenu";
+import DynamicMenu from "../wire/DynamicMenu";
 import { Sidebar } from "./Sidebar";
+import Topbar from "./Topbar";
+// import DynamicMenu from "../../components/DynamicMenu";
 
 interface MainLayoutInput {
   sideBarWidth?: string,
@@ -45,15 +46,15 @@ const MainLayout = (props: MainLayoutInput) => {
           flexGrow: 1,
           padding: '10px',
           width: `calc(100%)`,
-          minHeight: "100vh"
+          minHeight: "100vh",
+          marginTop:'60px'
         }}
       >
-        <Toolbar />
         <Outlet />
       </Box>
     </Box>
   );
 };
 
-export type { MainLayoutInput };
 export { MainLayout };
+export type { MainLayoutInput };

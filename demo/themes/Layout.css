@@ -1,0 +1,303 @@
+.h1 {
+    font-size: 2.2em;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.h1-container {
+    padding: 20px 0 20px 0;
+}
+
+.h2-container {
+    padding: 0 0 20px 0;
+}
+
+.h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.h3 {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.h3-container {
+    padding: 0 0 20px 0;
+    margin-top: 15px;
+}
+
+/* -- tooltip-- */
+.MuiTooltip-tooltip {
+    background-color: transparent !important;
+    font-size: 14px !important;
+    color: rgb(200, 200, 200) !important;
+    padding: 0 !important;
+    margin: -5px 10px 0 0 !important;
+}
+
+/* -- Taps & TapPanel userManagement & groups -- */
+.user-form-container {
+    /* height: 400px;
+    overflow-y: auto; */
+    /* width: 100%; */
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.user-form-header {
+    font-size: 25px;
+    text-align: center;
+}
+
+.border-bottom {
+    border-bottom: 2px solid black;
+    margin-top: 20px;
+}
+
+.tab-container {
+    background-color: #282c34;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.tab-icon {
+    color: rgb(153, 153, 153);
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.tab-icon:hover {
+    color: white;
+}
+
+.user-tabs {
+    gap: 50px !important;
+}
+
+.MuiTabs-flexContainer {
+    gap: 5px !important;
+    background-color: #2c3038;
+    border-radius: 10px;
+}
+
+.user-tab {
+    color: var(--secondary-text-color) !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    text-transform: lowercase !important;
+    transition: background-color 0.3s ease;
+}
+
+.MuiTab-root.Mui-selected {
+    color: var(--secondary-text-color) !important;
+    border-bottom: none;
+}
+
+.MuiTabs-indicator {
+    height: 3px !important;
+    border-radius: 50px !important;
+}
+
+pre {
+    padding: 20px 0 !important;
+}
+
+/* --pages -- */
+.palmyra-demo-container-wrapper {
+    width: 50%;
+}
+
+.demo-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 105ch;
+    padding: 20px;
+    background-color: var(--secondary-text-color);
+}
+
+.config-container {
+    color: var(--secondary-text-color);
+    padding: 0px 20px;
+}
+
+/* definition table head */
+
+.defn-table-head {
+    font-size: 20px !important;
+}
+
+.defn-import .user-form-container {
+    height: auto;
+}
+
+.defn-table-column:hover {
+    background-color: rgb(252, 252, 252);
+}
+
+/* -- Home -- */
+
+.home-card {
+    border: rgb(232, 234, 238) 1px solid;
+    padding: 10px;
+    border-radius: 12px;
+    margin-top: 15px;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: linear-gradient(to right bottom, rgba(235, 245, 255, 0.3) 25%, rgba(246, 247, 248, 0.2) 100%);
+}
+
+.home-card:hover {
+    box-shadow: rgb(204, 230, 255) 0px 2px 8px;
+}
+
+.home-card-container {
+    margin-top: 25px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.home-chart {
+    width: 1000px;
+    margin-top: 10px;
+}
+
+.chart-doc-para {
+    margin-top: 2em;
+}
+
+.doc-para {
+    font-size: 15px;
+}
+
+/* --info box-- */
+.info-box-container {
+    display: block;
+    border-width: 1px 1px 0px 1px;
+    border-style: solid;
+    border-color: rgb(238, 238, 238);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.info-box-component-container {
+    padding: 30px 20%;
+}
+
+.info-box-detail-container {
+    border-radius: 5px;
+    background-color: #282c34;
+}
+
+.info-container {
+    margin-top: 20px;
+}
+
+.formx-children-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.info-checkbox-container .formx-children-container .palmyra-form-field-container {
+    width: auto !important;
+    padding: 0 !important;
+}
+
+.copy-icon-container {
+    position: relative;
+}
+
+.copy-icon {
+    position: absolute;
+    margin-top: 10px;
+    right: 0px;
+}
+
+pre {
+    padding: 20px !important;
+}
+
+/* card */
+.demo-card-container {
+    border: rgb(220, 220, 220) solid 0.5px;
+    padding: 15px;
+    margin: 10px;
+    display: flex;
+    border-radius: 10px;
+}
+
+.demo-card-left-content {
+    align-self: center;
+    padding-right: 30px;
+}
+
+/* form */
+
+.form-header-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.drawer-form-header-container {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-between;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.drawer-form-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    flex-basis: 20%;
+}
+
+.grid-container {
+    height: 100%;
+    overflow: auto;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.MuiTableHead-root {
+    position: sticky;
+    top: 0;
+    background-color: rgba(248, 248, 248);
+}
+
+.MuiTableCell-root {
+    padding: 7px;
+    /* border-right: 1px solid var(--border-color); */
+}
+
+.tab-layout-container .user-form-container {
+    height: auto;
+    border-radius: 0px 0 10px 10px;
+    border-top: 1px solid rgba(var(--disable-text-color-rgb), 0.2);
+}
+
+.py-data-grid-table {
+    height: calc(100% - 100px);
+    overflow: scroll;
+}
+
+.py-grid-container {
+    height: 80vh;
+}

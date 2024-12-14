@@ -1,0 +1,227 @@
+{
+    "result": [
+        {
+            "id": 1,
+            "name": "Home",
+            "code": "ui/home"
+        },
+        {
+            "id": 74,
+            "name": "Demo",
+            "code": "ui/demo"
+        },
+        {
+            "id": 75,
+            "name": "Dashboard",
+            "code": "ui/dashboard"
+        },
+        {
+            "id": 2,
+            "name": "Initial Setup",
+            "code": "ui/initialSetup"
+        },
+        {
+            "id": 4,
+            "name": "Bar Chart",
+            "code": "ui/chart/demo/barChart",
+            "parent": 30
+        },
+        {
+            "id": 6,
+            "name": "Line Chart",
+            "code": "ui/chart/demo/lineChart",
+            "parent": 30
+        },
+        {
+            "id": 7,
+            "name": "Multi Line Chart",
+            "code": "ui/chart/demo/multiLineChart",
+            "parent": 30
+        },
+        {
+            "id": 8,
+            "name": "Doughnut Chart",
+            "code": "ui/chart/demo/doughnutChart",
+            "parent": 30
+        },
+        {
+            "id": 9,
+            "name": "Pie Chart",
+            "code": "ui/chart/demo/pieChart",
+            "parent": 30
+        },
+        {
+            "id": 10,
+            "name": "Polar Area Chart",
+            "code": "ui/chart/demo/polarAreaChart",
+            "parent": 30
+        },
+        {
+            "id": 11,
+            "name": "Radar Chart",
+            "code": "ui/chart/demo/radarChart",
+            "parent": 30
+        },
+        {
+            "id": 12,
+            "name": "Grouped Bar Chart",
+            "code": "ui/chart/demo/groupedBarChart",
+            "parent": 30
+        },
+        {
+            "id": 13,
+            "name": "Stacked Bar Chart",
+            "code": "ui/chart/demo/stackedBarChart",
+            "parent": 30
+        },
+        {
+            "id": 14,
+            "name": "Scatter Chart",
+            "code": "ui/chart/demo/scatterChart",
+            "parent": 30
+        },
+        {
+            "id": 15,
+            "name": "Bubble Chart",
+            "code": "ui/chart/demo/bubbleChart",
+            "parent": 30
+        },
+        {
+            "id": 17,
+            "name": "Chart Scale",
+            "code": "ui/chartScale",
+            "parent": 30
+        },
+        {
+            "id": 29,
+            "name": "Components",
+            "code": "ui/components",
+            "children": "30, 31, 32, 33"
+        },
+        {
+            "id": 30,
+            "name": "Chart",
+            "code": "ui/chart",
+            "parent": 29,
+            "children": "4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15"
+        },
+        {
+            "id": 31,
+            "name": "Form",
+            "code": "ui/form",
+            "parent": 29,
+            "children": "34, 35, 36, 37, 38, 39, 42, 43, 44, 46, 47, 48, 49, 50, 51, 52"
+        },
+        {
+            "id": 32,
+            "name": "Card",
+            "code": "ui/card",
+            "parent": 29,
+            "children": ""
+        },
+        {
+            "id": 33,
+            "name": "Grid",
+            "code": "ui/Grid",
+            "parent": 29,
+            "children": ""
+        },
+        {
+            "id": 34,
+            "name": "Auto Complete",
+            "code": "ui/form/demo/autoComplete",
+            "parent": 31
+        },
+        {
+            "id": 35,
+            "name": "Check Box",
+            "code": "ui/form/demo/checkBox",
+            "parent": 31
+        },
+        {
+            "id": 36,
+            "name": "Check Box Group",
+            "code": "ui/form/demo/checkBoxGroup",
+            "parent": 31
+        },
+        {
+            "id": 37,
+            "name": "Date Picker",
+            "code": "ui/form/demo/datePicker",
+            "parent": 31
+        },
+        {
+            "id": 38,
+            "name": "Date Range Picker",
+            "code": "ui/form/demo/dateRangePicker",
+            "parent": 31
+        },
+        {
+            "id": 39,
+            "name": "Date Time Picker",
+            "code": "ui/form/demo/dateTimePicker",
+            "parent": 31
+        },
+        {
+            "id": 42,
+            "name": "Password",
+            "code": "ui/form/demo/password",
+            "parent": 31
+        },
+        {
+            "id": 43,
+            "name": "Radio Group",
+            "code": "ui/form/demo/radioGroup",
+            "parent": 31
+        },
+        {
+            "id": 44,
+            "name": "Rating",
+            "code": "ui/form/demo/rating",
+            "parent": 31
+        },
+        {
+            "id": 46,
+            "name": "Select",
+            "code": "ui/form/demo/select",
+            "parent": 31
+        },
+        {
+            "id": 47,
+            "name": "Switch",
+            "code": "ui/form/demo/switch",
+            "parent": 31
+        },
+        {
+            "id": 48,
+            "name": "Slider",
+            "code": "ui/form/demo/slider",
+            "parent": 31
+        },
+        {
+            "id": 49,
+            "name": "Server Lookup",
+            "code": "ui/form/demo/serverLookup",
+            "parent": 31
+        },
+        {
+            "id": 50,
+            "name": "Text Field",
+            "code": "ui/form/demo/textField",
+            "parent": 31
+        },
+        {
+            "id": 51,
+            "name": "Text Area",
+            "code": "ui/form/demo/textArea",
+            "parent": 31
+        },
+        {
+            "id": 52,
+            "name": "View",
+            "code": "ui/form/demo/view",
+            "parent": 31
+        }
+    ],
+    "status": 200
+}
