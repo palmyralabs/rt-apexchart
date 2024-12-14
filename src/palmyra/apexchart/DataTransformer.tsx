@@ -1,17 +1,17 @@
 import { DataTransformer, getArrayTransformer, getObjectTransformer } from "@palmyralabs/ts-utils";
-import { ISeriesOptions, ITransformOptions } from "../chart/dataAccessor/types";
 import { generateAccessors } from "../chart/dataAccessor/AccessorGenerator";
 import { getChartConsumer } from "./utils/AxisChartConsumer";
+import { IDataTransformOptions } from "./types";
 
 
-const getConsumer = (options: ITransformOptions) => {
-    const consumerOptions = generateAccessors(options)
-    return getChartConsumer(consumerOptions);
+const getConsumer = (props: IDataTransformOptions) => {
+    const consumerOptions = generateAccessors(props.transformOptions)
+    return getChartConsumer(consumerOptions, props);
 }
 
-const useDataTransformer = (options: ITransformOptions, seriesOptions?: ISeriesOptions[]): DataTransformer<any, any> => {
-    const consumer = getConsumer(options);
-    const dataType = options.dataType || 'array';
+const useDataTransformer = (props: IDataTransformOptions): DataTransformer<any, any> => {
+    const consumer = getConsumer(props);
+    const dataType = props.transformOptions.dataType || 'array';
     if (dataType == 'array')
         return getArrayTransformer(consumer);
     else

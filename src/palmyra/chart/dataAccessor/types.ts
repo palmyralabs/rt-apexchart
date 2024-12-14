@@ -10,10 +10,9 @@ interface ITransformOptions {
     dataType?: 'object' | 'array' | 'keyValue';
 }
 
-interface ISeriesOptions extends Omit<ApexAxisChartSeries, 'data'>{
+interface ISeriesOptions extends Omit<ApexAxisChartSeries[0], "data">{
 
 }
-
 
 interface IChartConsumerOptions {
     xKeyAccessor: accessor<ResultType>,

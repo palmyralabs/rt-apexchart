@@ -1,8 +1,18 @@
 import { FlexiApexChart } from "../../../src/main";
-
-
+import { IenhanceData } from "../../../src/palmyra/apexchart/types";
+import { ResultType } from "../../../src/palmyra/chart";
 
 const MultiLineChart = () => {
+
+    const enhanceData: IenhanceData = (xValue: ResultType,
+        yValue: number, value: any, dataIndex: number,
+        seriesIndex: number, key: string) => {
+
+        if (yValue < 5)
+            return { fillColor: 'red' };
+        else
+            return {}
+    }
 
     return (
         <div id="chart">
@@ -10,9 +20,15 @@ const MultiLineChart = () => {
                 xKey: 'month', yKey: ['value', 'min', 'max'],
                 dataType: 'object'
             }}
-                labels={['Value', 'min', 'max']}
                 data={data} type="bar"
-
+                // options={{ legend: { position: "top" } }}
+                legend={{ position: "top" }}
+                seriesOptions={[
+                    { name: 'Value' },
+                    { name: 'Minimum' },
+                    { name: 'Maximum' }
+                ]}
+                enhanceData={enhanceData}
             />
         </div>
     );

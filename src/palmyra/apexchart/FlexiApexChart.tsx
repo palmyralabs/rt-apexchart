@@ -1,20 +1,17 @@
 import { useDataTransformer } from "./DataTransformer";
-import { ReactApexChart, ReactApexChartProps } from "./ReactApexChart"
-import { ISeriesOptions, ITransformOptions } from "../chart/dataAccessor/types";
+import { ReactApexChart } from "./ReactApexChart";
+import { FlexiApexChartProps } from "./types";
 
-
-interface FlexiApexChartProps extends Omit<ReactApexChartProps, 'series'> {
-    data: any,
-    transformOptions: ITransformOptions,
-    seriesOptions?: ISeriesOptions[]
-}
-
-
-const FlexiApexChart = ({ transformOptions,seriesOptions, ...props }: FlexiApexChartProps) => {
-    const transformer = useDataTransformer(transformOptions, seriesOptions);
-    const seriesData = transformer.transform(props.data);
+const FlexiApexChart = ({ transformOptions, seriesOptions, enhanceData,
+    data,
+    ...props }: FlexiApexChartProps) => {
+    const transformer = useDataTransformer({
+        seriesOptions,
+        transformOptions,
+        enhanceData
+    });
+    const seriesData = transformer.transform(data);
     return <ReactApexChart {...props} series={seriesData} />
 }
 
 export { FlexiApexChart }
-export type { FlexiApexChartProps }

@@ -8,8 +8,8 @@ test('KeyValueDataTransformerTest, DefaultKeys', () => {
         january: 32 ,
         february: 27
     };
-    const options: ITransformOptions = { dataType: 'keyValue'}
-    const transformer = useDataTransformer(options);
+    const transformOptions: ITransformOptions = { dataType: 'keyValue'}
+    const transformer = useDataTransformer({transformOptions});
     const actual = transformer.transform(data);
     const expected = [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] }]
     expect(actual).toEqual(expected);
@@ -21,8 +21,8 @@ test('KeyValueDataTransformerTest, ProvidedKeys', () => {
         january: 32 ,
         february: 27
     };
-    const options: ITransformOptions = { dataType: 'keyValue', xKey: 'month', yKey: ['payable']}
-    const transformer = useDataTransformer(options);
+    const transformOptions: ITransformOptions = { dataType: 'keyValue', xKey: 'month', yKey: ['payable']}
+    const transformer = useDataTransformer({transformOptions});
     const actual = transformer.transform(data);
     const expected = [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] }]
     expect(actual).toEqual(expected);
@@ -33,8 +33,8 @@ test('KeyValueDataTransformerTest, MultiKeys', () => {
         january: 32 ,
         february: 27
     };
-    const options: ITransformOptions = { dataType: 'keyValue', xKey: 'month', yKey: ['payable', 'receivable']}
-    const transformer = useDataTransformer(options);
+    const transformOptions: ITransformOptions = { dataType: 'keyValue', xKey: 'month', yKey: ['payable', 'receivable']}
+    const transformer = useDataTransformer({transformOptions});
     const actual = transformer.transform(data);
     const expected = [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] }]
     expect(actual).toEqual(expected);

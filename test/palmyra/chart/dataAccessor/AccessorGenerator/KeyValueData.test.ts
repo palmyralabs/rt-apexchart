@@ -9,7 +9,7 @@ test('AccessorGenerator, DefaultKeys', () => {
 
     const month = consumerOptions.xKeyAccessor(data, 'name')
     const value = consumerOptions.yKeyAccessors[0]('january')
-    console.log(month, value);
+    
     expect(month).toEqual('name');
     expect(value).toEqual('january');
 })

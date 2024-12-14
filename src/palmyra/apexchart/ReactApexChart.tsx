@@ -1,16 +1,16 @@
 //@ts-ignore
 import ApexCharts from "apexcharts";
-import * as ApexChartsType from 'apexcharts'
 import { useEffect, useRef } from "react";
+import { ReactApexChartProps } from "./types";
 
 
-function omit(obj: any, keysToRemove: string[]) {
-    let newObj = { ...obj };
-    keysToRemove.forEach((key) => {
-        delete newObj[key];
-    });
-    return newObj;
-}
+// function omit(obj: any, keysToRemove: string[]) {
+//     let newObj = { ...obj };
+//     keysToRemove.forEach((key) => {
+//         delete newObj[key];
+//     });
+//     return newObj;
+// }
 
 function deepEqual(obj1: any, obj2: any, visited = new WeakSet()) {
     if (obj1 === obj2) return true;
@@ -42,14 +42,6 @@ function deepEqual(obj1: any, obj2: any, visited = new WeakSet()) {
     return true;
 }
 
-interface ReactApexChartProps extends ApexChartsType.ApexOptions {
-    type: ApexChart["type"]
-    width?: string;
-    height?: string;
-    series: ApexAxisChartSeries | ApexNonAxisChartSeries
-    options?: Omit<ApexCharts.ApexOptions, 'series'>
-}
-
 const ReactApexChart = ({
     type = "line",
     width = "100%",
@@ -64,7 +56,7 @@ const ReactApexChart = ({
 
     useEffect(() => {
         prevOptions.current = options;
-        const current = chartRef.current;  
+        const current = chartRef.current;
         chart.current = new ApexCharts(current, getConfig());
         chart.current.render();
 
@@ -105,36 +97,35 @@ const ReactApexChart = ({
             chart: { type, height, width },
             series
         };
-        console.log(newOptions);
-        return extend(options, newOptions);
+        const r = extend(restProps, options, newOptions);
+        return r;
     };
 
     const isObject = (item) => {
         return item && typeof item === "object" && !Array.isArray(item);
     };
 
-    const extend = (target, source) => {
+    const extend = (target, ...sources) => {
         let output = { ...target };
-        if (isObject(target) && isObject(source)) {
-            Object.keys(source).forEach((key) => {
-                if (isObject(source[key])) {
-                    if (!(key in target)) {
-                        Object.assign(output, { [key]: source[key] });
+        sources.forEach((source) => {
+            if (isObject(target) && isObject(source)) {
+                Object.keys(source).forEach((key) => {
+                    if (isObject(source[key])) {
+                        if (!(key in target)) {
+                            Object.assign(output, { [key]: source[key] });
+                        } else {
+                            output[key] = extend(target[key], source[key]);
+                        }
                     } else {
-                        output[key] = extend(target[key], source[key]);
+                        Object.assign(output, { [key]: source[key] });
                     }
-                } else {
-                    Object.assign(output, { [key]: source[key] });
-                }
-            });
-        }
+                });
+            }
+        });
         return output;
     };
 
-    const rest = omit(restProps, ['data']);
-
-    return <div ref={chartRef} {...rest} />;
+    return <div ref={chartRef} />;
 }
 
 export { ReactApexChart }
-export type { ReactApexChartProps }
