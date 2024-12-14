@@ -1,5 +1,5 @@
 import { DataConsumer } from "@palmyralabs/ts-utils";
-import { IChartConsumerOptions } from "../types";
+import { IChartConsumerOptions } from "../../chart/dataAccessor/types";
 
 
 type seriesDataType = ApexAxisChartSeries[0];
@@ -25,7 +25,7 @@ const getChartConsumer = (options: IChartConsumerOptions): DataConsumer<any, any
     const processRow = (v: any, _idx: number, key?: string) => {
         const xValue = xKeyAccessor(v);
         yKeyAccessors.forEach((y, i) => {
-            const yValue = y(v);
+            const yValue = y(v, key);
             const data: dataType = { x: xValue, y: yValue };
             //@ts-ignore
             result[i].data.push(data);

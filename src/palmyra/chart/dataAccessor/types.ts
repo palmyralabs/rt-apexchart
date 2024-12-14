@@ -7,7 +7,7 @@ interface ITransformOptions {
     groupKey?: AttributeAccessor;
     rKey?: AttributeAccessor
     rLabel?: AttributeAccessor,
-    dataType?: 'object' | 'array';
+    dataType?: 'object' | 'array' | 'keyValue';
 }
 
 
@@ -22,7 +22,7 @@ interface IChartConsumerOptions {
 }
 
 
-type accessor<T> = (d: any) => T;
+type accessor<T> = (d: any, k?: string) => T;
 type ResultType = string | number | Date;
 type AttributeAccessor = string | accessor<ResultType>;
 type LabelAccessor = string | accessor<string>;

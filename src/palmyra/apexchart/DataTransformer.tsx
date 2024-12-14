@@ -1,7 +1,8 @@
 import { getArrayTransformer, getObjectTransformer } from "@palmyralabs/ts-utils";
-import { ITransformOptions } from "./types";
-import { generateAccessors } from "./utils/AccessorGenerator";
-import { getChartConsumer } from "./utils/ChartConsumer";
+import { ITransformOptions } from "../chart/dataAccessor/types";
+import { generateAccessors } from "../chart/dataAccessor/AccessorGenerator";
+import { getChartConsumer } from "./utils/AxisChartConsumer";
+
 
 const getConsumer = (options: ITransformOptions) => {
     const consumerOptions = generateAccessors(options)

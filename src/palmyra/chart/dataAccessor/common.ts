@@ -1,16 +1,5 @@
 import { getValueByKey, hasDot } from "@palmyralabs/ts-utils";
-import { accessor, AttributeAccessor, IChartConsumerOptions, ITransformOptions } from "../types";
-
-const generateAccessors = (options: ITransformOptions): IChartConsumerOptions => {
-    const xKey = options.xKey || 'name';
-    const yKey = options.yKey || 'value';
-
-    const yKeyAccessors = getAccessors(yKey);
-    const xKeyAccessor = getAccessor(xKey);
-
-    var result = { xKeyAccessor, yKeyAccessors };
-    return result;
-}
+import { accessor, AttributeAccessor } from "./types";
 
 function getAccessors(yKey: AttributeAccessor | AttributeAccessor[]): accessor<any>[] {
     const yKeys = (yKey instanceof Array) ? yKey : (yKey ? [yKey] : ['value'])
@@ -32,4 +21,5 @@ function getAccessor(v: AttributeAccessor): accessor<any> {
     throw Error('Invalid Attribute Accessor  ');
 }
 
-export { generateAccessors }
+
+export { getAccessor, getAccessors }

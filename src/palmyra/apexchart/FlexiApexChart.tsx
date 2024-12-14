@@ -1,6 +1,6 @@
 import { useDataTransformer } from "./DataTransformer";
 import { ReactApexChart, ReactApexChartProps } from "./ReactApexChart"
-import { ITransformOptions } from "./types";
+import { ITransformOptions } from "../chart/dataAccessor/types";
 
 
 interface FlexiApexChartProps extends Omit<ReactApexChartProps, 'series'> {
