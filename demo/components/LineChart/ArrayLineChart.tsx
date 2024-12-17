@@ -9,7 +9,7 @@ const ArrayLineChart = () => {
             <FlexiApexChart transformOptions={{ xKey: 'month', yKey: 'value', 
                 yLabel:["welcome"]
              }}
-                data={data} type="line" />
+                data={data} type="line" height="350" width="600" />
         </div>
     );
 

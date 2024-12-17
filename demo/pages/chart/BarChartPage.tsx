@@ -1,9 +1,9 @@
-import MultiLineChart from "../../components/LineChart/MultiLineChart"
+import BarChart from "../../components/BarChart/BarChart"
 
 const BarChartPage = () => {
     return (
         <div>
-            <MultiLineChart />
+            <BarChart />
         </div>
     )
 }

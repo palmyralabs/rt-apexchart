@@ -28,7 +28,7 @@ const MultiLineChart = () => {
                     { name: 'Minimum' },
                     { name: 'Maximum' }
                 ]}
-                enhanceData={enhanceData}
+                enhanceData={enhanceData} height="350" width="1000"
             />
         </div>
     );
