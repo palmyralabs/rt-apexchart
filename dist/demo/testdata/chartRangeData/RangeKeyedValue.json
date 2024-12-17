@@ -1,0 +1,27 @@
+{
+    "result": {
+        "Analysis": {
+            "fromDate": "2019-02-27",
+            "toDate": "2019-03-04"
+        },
+        "Design": {
+            "fromDate": "2019-03-04",
+            "toDate": "2019-03-08"
+        },
+        "Coding": {
+            "fromDate": "2019-03-07",
+            "toDate": "2019-03-10"
+        },
+        "Testing": {
+            "fromDate": "2019-03-08",
+            "toDate": "2019-03-12"
+        },
+        "Deployment": {
+            "fromDate": "2019-03-12",
+            "toDate": "2019-03-17"
+        }
+    },
+    "limit": 8,
+    "offset": 0,
+    "total": 0
+}

@@ -1,0 +1,28 @@
+{
+    "result": {
+        "January": {
+            "value": 22
+        },
+        "February": {
+            "value": 31
+        },
+        "March": {
+            "value": 35
+        },
+        "April": {
+            "value": 51
+        },
+        "May":{
+            "value" : 49
+        },
+        "June":{
+            "value": 62
+        },
+        "July" :{
+            "value" : 69
+        },
+        "August":{
+            "value" : 91
+        }
+    }
+}

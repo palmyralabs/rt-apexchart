@@ -29,16 +29,15 @@ export default defineConfig({
     }, rollupOptions: {
       external: [
         'axios',
-        'chart.js',
-        'chartjs-plugin-datalabels',
-        'd3',
+        '@palmyralabs/ts-utils',
+        '@palmyralabs/palmyra-wire',
+        'apexcharts',
         'dayjs',
         'react',
         'react-dom',
         'react-icons',
         'react-router-dom',
-        'react/jsx-runtime',
-        'react-chartjs-2'        
+        'react/jsx-runtime'      
       ],
       input: Object.fromEntries(
         glob.sync(['src/palmyra/**/*.{ts,tsx}', 'src/main.ts']).map(file => [          

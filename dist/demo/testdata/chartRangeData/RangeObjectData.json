@@ -1,0 +1,32 @@
+{
+    "result": {
+        "one": {
+            "name": "Analysis",
+            "fromDate": "2019-02-27",
+            "toDate": "2019-03-04"
+        },
+        "two": {
+            "name": "Design",
+            "fromDate": "2019-03-04",
+            "toDate": "2019-03-08"
+        },
+        "three": {
+            "name": "Coding",
+            "fromDate": "2019-03-07",
+            "toDate": "2019-03-10"
+        },
+        "four": {
+            "name": "Testing",
+            "fromDate": "2019-03-08",
+            "toDate": "2019-03-12"
+        },
+        "five": {
+            "name": "Deployment",
+            "fromDate": "2019-03-12",
+            "toDate": "2019-03-17"
+        }
+    },
+    "limit": 8,
+    "offset": 0,
+    "total": 0
+}
