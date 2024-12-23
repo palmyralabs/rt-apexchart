@@ -8,6 +8,11 @@ import './themes/colorDef.css';
 import './themes/blue/Colors.css'
 import MultiLineChartPage from "./pages/chart/MultiLineChartPage";
 import LineChartPage from "./pages/chart/LineChartPage";
+import PieChartPage from "./pages/chart/PieChartPage";
+import DoughnutChart from "./components/DonutChart/DoughnutChart";
+import ScatterChartPage from "./pages/chart/ScatterChartPage";
+import ArrayMultiLineChart from "./components/LineChart/MultiLineChart";
+import GroupedBarChartPage from "./pages/chart/GroupedBarChartPage";
 
 
 function App() {
@@ -23,6 +28,10 @@ function App() {
                 <Route path="multiLineChart" element={<MultiLineChartPage />} />
                 <Route path="barChart" element={<BarChartPage />}/>
                 <Route path="lineChart" element={<LineChartPage/>}/>
+                <Route path="pieChart" element={<PieChartPage/>}/>
+                <Route path="donutChart" element={<DoughnutChart/>}/>
+                <Route path = "scatterChart" element={<ScatterChartPage/>}/>
+                <Route path = "groupedBarChart" element = {<GroupedBarChartPage/>}/>
               </Route>
               <Route path="*" element={<h1>Under Construction</h1>} />
             </Route>
