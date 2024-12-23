@@ -4,6 +4,7 @@ import { ResultType } from "../chart";
 
 type ISeries = ApexAxisChartSeries[0];
 type ISeriesDataType = ApexAxisChartSeries[0]["data"][0];
+type chartType = ApexChart["type"];
 
 interface IDataEnhanced {
     fill?: ApexFill;
@@ -40,11 +41,11 @@ interface FlexiApexChartProps extends Omit<ReactApexChartProps, 'series'>, IData
 }
 
 interface ReactApexChartProps extends ApexChartsType.ApexOptions {
-    type: ApexChart["type"]
+    type: chartType
     width?: string;
     height?: string;
     series: ApexAxisChartSeries | ApexNonAxisChartSeries
     options?: Omit<ApexCharts.ApexOptions, 'series'>
 }
 
-export type { ReactApexChartProps, FlexiApexChartProps, IDataTransformOptions }
+export type { ReactApexChartProps, FlexiApexChartProps, IDataTransformOptions, chartType }

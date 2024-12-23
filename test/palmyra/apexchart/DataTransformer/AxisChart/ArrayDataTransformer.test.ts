@@ -7,10 +7,10 @@ test('ArrayDataTransformer, DefaultKeys', () => {
     const data = [{ name: 'january', value: 32 },
     { name: 'february', value: 27 }];
     const transformOptions: ITransformOptions = {}
-    const transformer = useDataTransformer({transformOptions});
+    const transformer = useDataTransformer('line', { transformOptions });
     const actual = transformer.transform(data);
 
-    const expected = [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] }]
+    const expected = { series: [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] }] }
     expect(actual).toEqual(expected)
 })
 
@@ -19,23 +19,25 @@ test('ArrayDataTransformer, Provided Keys', () => {
     const data = [{ month: 'january', payable: 32 },
     { month: 'february', payable: 27 }];
     const transformOptions: ITransformOptions = { xKey: 'month', yKey: ['payable'] }
-    const transformer = useDataTransformer({transformOptions});
+    const transformer = useDataTransformer('line', { transformOptions });
     const actual = transformer.transform(data);
 
-    const expected = [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] }]
+    const expected = { series: [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] }] }
     expect(actual).toEqual(expected)
 })
 
 test('ArrayDataTransformer, Multi Keys', () => {
-    const data = [{ month: 'january', payable: 32, progress:27 },
-        { month: 'february', payable: 27 , progress:25}];        
-        
-    const transformOptions: ITransformOptions = {        
+    const data = [{ month: 'january', payable: 32, progress: 27 },
+    { month: 'february', payable: 27, progress: 25 }];
+
+    const transformOptions: ITransformOptions = {
         xKey: 'month', yKey: ['payable', 'progress']
     }
-    const transformer = useDataTransformer({transformOptions});
+    const transformer = useDataTransformer('line', { transformOptions });
     const actual = transformer.transform(data);
-    const expected = [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] },
-    { data: [{ x: 'january', y: 27 }, { x: 'february', y: 25 }] }]
+    const expected = {
+        series: [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] },
+        { data: [{ x: 'january', y: 27 }, { x: 'february', y: 25 }] }]
+    }
     expect(actual).toEqual(expected)
 })

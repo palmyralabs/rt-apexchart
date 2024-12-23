@@ -42,10 +42,10 @@ const getChartConsumer = (options: IChartConsumerOptions,
     }
 
     const getResult = () => {
-        return result;
+        return { series: result };
     }
 
     return { initialize, processRow, getResult }
 }
 
-export { getChartConsumer }
+export default getChartConsumer;

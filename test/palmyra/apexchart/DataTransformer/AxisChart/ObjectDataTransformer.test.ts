@@ -9,10 +9,10 @@ test('ObjectDataTransformer, DefaultKeys', () => {
         february: { value: 27 }
     };
     const transformOptions: ITransformOptions = { dataType: 'object', xKey: 'key' }
-    const transformer = useDataTransformer({transformOptions});
+    const transformer = useDataTransformer('line', { transformOptions });
     const actual = transformer.transform(data);
-    
-    const expected = [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] }]
+
+    const expected = { series: [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] }] }
     expect(actual).toEqual(expected);
 })
 
@@ -26,24 +26,26 @@ test('ObjectDataTransformer, Provided Keys', () => {
         dataType: 'object',
         xKey: 'month', yKey: ['payable']
     }
-    const transformer = useDataTransformer({transformOptions});
+    const transformer = useDataTransformer('line', { transformOptions });
     const actual = transformer.transform(data);
-    const expected = [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] }]
+    const expected = { series: [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] }] }
     expect(actual).toEqual(expected)
 })
 
 test('ObjectDataTransformer, Provided Keys', () => {
     const data = {
-        january: { payable: 32, progress:27 },
-        february: { payable: 27, progress:25 }
+        january: { payable: 32, progress: 27 },
+        february: { payable: 27, progress: 25 }
     };;
     const transformOptions: ITransformOptions = {
         dataType: 'object',
         xKey: 'month', yKey: ['payable', 'progress']
     }
-    const transformer = useDataTransformer({transformOptions});
+    const transformer = useDataTransformer('line', { transformOptions });
     const actual = transformer.transform(data);
-    const expected = [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] },
-    { data: [{ x: 'january', y: 27 }, { x: 'february', y: 25 }] }]
+    const expected = {
+        series: [{ data: [{ x: 'january', y: 32 }, { x: 'february', y: 27 }] },
+        { data: [{ x: 'january', y: 27 }, { x: 'february', y: 25 }] }]
+    }
     expect(actual).toEqual(expected)
 })

@@ -5,13 +5,13 @@ import { FlexiApexChartProps } from "./types";
 const FlexiApexChart = ({ transformOptions, seriesOptions, enhanceData,
     data,
     ...props }: FlexiApexChartProps) => {
-    const transformer = useDataTransformer({
+    const transformer = useDataTransformer(props.type, {
         seriesOptions,
         transformOptions,
         enhanceData
     });
-    const seriesData = transformer.transform(data);
-    return <ReactApexChart {...props} series={seriesData} />
+    const p = transformer.transform(data);
+    return <ReactApexChart {...props} {...p} />
 }
 
 export { FlexiApexChart }
