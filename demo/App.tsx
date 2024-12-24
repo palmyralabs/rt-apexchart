@@ -11,10 +11,10 @@ import LineChartPage from "./pages/chart/LineChartPage";
 import PieChartPage from "./pages/chart/PieChartPage";
 import GroupedBarChartPage from "./pages/chart/GroupedBarChartPage";
 import DoughnutChartPage from "./pages/chart/DoughnutChartPage";
-import ScatterChartPage from "./pages/chart/ScatterChartPage";
+// import ScatterChartPage from "./pages/chart/ScatterChartPage";
 import PolarAreaChartPage from "./pages/chart/PolarAreaChartPage";
 import RadarChartPage from "./pages/chart/RadarChartPage";
-import StackedBarChartPage from "./pages/chart/StackedBarChartPage";
+// import StackedBarChartPage from "./pages/chart/StackedBarChartPage";
 
 
 function App() {
@@ -32,11 +32,11 @@ function App() {
                 <Route path="lineChart" element={<LineChartPage />} />
                 <Route path="pieChart" element={<PieChartPage />} />
                 <Route path="doughnutChart" element={<DoughnutChartPage />} />
-                <Route path="scatterChart" element={<ScatterChartPage />} />
+                {/* <Route path="scatterChart" element={<ScatterChartPage />} /> */}
                 <Route path="groupedBarChart" element={<GroupedBarChartPage />} />
                 <Route path="polarAreaChart" element={<PolarAreaChartPage />} />
                 <Route path="radarChart" element={<RadarChartPage />} />
-                <Route path="stackedBarChart" element={<StackedBarChartPage/>} />
+                {/* <Route path="stackedBarChart" element={<StackedBarChartPage/>} /> */}
               </Route>
               <Route path="*" element={<h1>Under Construction</h1>} />
             </Route>
