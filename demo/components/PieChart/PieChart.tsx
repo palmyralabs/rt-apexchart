@@ -18,7 +18,6 @@ const PieChart = () => {
             }}
                 annotations={{
                     points: [{
-                        x: 'Bananas',
                         seriesIndex: 0,
                         label: {
                             borderColor: '#775DD0',
@@ -38,7 +37,7 @@ const PieChart = () => {
                     position: "right"
                 }}
                 title={{
-                    text: 'Bar Chart',
+                    text: 'pie Chart',
                     align: 'left',
                     style: {
                         fontWeight: 'bold',
