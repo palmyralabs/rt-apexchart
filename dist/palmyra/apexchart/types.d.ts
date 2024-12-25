@@ -1,5 +1,6 @@
-import { ISeriesOptions, ITransformOptions } from '../chart/dataAccessor/types';
+import { IChartConsumerOptions, ISeriesOptions, ITransformOptions } from '../chart/dataAccessor/types';
 import { ResultType } from '../chart';
+import { DataConsumer } from '@palmyralabs/ts-utils';
 import * as ApexChartsType from 'apexcharts';
 type ISeries = ApexAxisChartSeries[0];
 type ISeriesDataType = ApexAxisChartSeries[0]["data"][0];
@@ -27,6 +28,7 @@ interface IDataTransformOptions {
     transformOptions: ITransformOptions;
     seriesOptions?: ISeriesOptions[];
     enhanceData?: IenhanceData;
+    getChartConsumer?(options: IChartConsumerOptions): DataConsumer<any, any>;
 }
 interface FlexiApexChartProps extends Omit<ReactApexChartProps, 'series'>, IDataTransformOptions {
     data: any;

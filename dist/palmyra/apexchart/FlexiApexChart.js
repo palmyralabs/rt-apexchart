@@ -1,20 +1,22 @@
-import { jsx as n } from "react/jsx-runtime";
-import { useDataTransformer as s } from "./DataTransformer.js";
-import { ReactApexChart as f } from "./ReactApexChart.js";
-const h = ({
+import { jsx as i } from "react/jsx-runtime";
+import { useDataTransformer as x } from "./DataTransformer.js";
+import { ReactApexChart as c } from "./ReactApexChart.js";
+import { extend as h } from "./utils/ObjectUtils.js";
+const j = ({
   transformOptions: t,
   seriesOptions: o,
   enhanceData: e,
   data: m,
+  options: s,
   ...r
 }) => {
-  const a = s(r.type, {
+  const n = x(r.type, {
     seriesOptions: o,
     transformOptions: t,
     enhanceData: e
-  }).transform(m);
-  return /* @__PURE__ */ n(f, { ...r, ...a });
+  }), { series: a, ...p } = n.transform(m), f = h(s, p);
+  return /* @__PURE__ */ i(c, { options: f, ...r, series: a });
 };
 export {
-  h as FlexiApexChart
+  j as FlexiApexChart
 };

@@ -7,6 +7,10 @@ import getNonAxisChartConsumer from "./utils/nonAxisChartConsumer";
 
 const getConsumer = (type: chartType, props: IDataTransformOptions) => {
     const consumerOptions = generateAccessors(props.transformOptions);
+    if(props.getChartConsumer){
+        return props.getChartConsumer(consumerOptions);
+    }
+    
     switch (type) {
         case 'bar':
         case 'line':
