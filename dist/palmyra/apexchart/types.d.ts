@@ -28,10 +28,11 @@ interface IDataTransformOptions {
     transformOptions: ITransformOptions;
     seriesOptions?: ISeriesOptions[];
     enhanceData?: IenhanceData;
-    getChartConsumer?(options: IChartConsumerOptions): DataConsumer<any, any>;
 }
+type ChartConsumerGenerator = (options: IChartConsumerOptions, props: IDataTransformOptions) => DataConsumer<any, any>;
 interface FlexiApexChartProps extends Omit<ReactApexChartProps, 'series'>, IDataTransformOptions {
     data: any;
+    getChartConsumer?: ChartConsumerGenerator;
 }
 interface ReactApexChartProps extends ApexChartsType.ApexOptions {
     type: chartType;
@@ -41,3 +42,4 @@ interface ReactApexChartProps extends ApexChartsType.ApexOptions {
     options?: Omit<ApexCharts.ApexOptions, 'series'>;
 }
 export type { ReactApexChartProps, FlexiApexChartProps, IDataTransformOptions, chartType };
+export type { ChartConsumerGenerator };

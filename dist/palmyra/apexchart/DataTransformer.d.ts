@@ -1,4 +1,7 @@
 import { DataTransformer } from '@palmyralabs/ts-utils';
-import { chartType, IDataTransformOptions } from './types';
-declare const useDataTransformer: (type: chartType, props: IDataTransformOptions) => DataTransformer<any, any>;
+import { ChartConsumerGenerator, chartType, IDataTransformOptions } from './types';
+interface IOptions extends IDataTransformOptions {
+    getChartConsumer: ChartConsumerGenerator;
+}
+declare const useDataTransformer: (type: chartType, props: IOptions) => DataTransformer<any, any>;
 export { useDataTransformer };

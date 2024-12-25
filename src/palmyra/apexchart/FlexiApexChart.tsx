@@ -7,11 +7,13 @@ import { extend } from "./utils/ObjectUtils";
 const FlexiApexChart = ({ transformOptions, seriesOptions, enhanceData,
     data,
     options,
+    getChartConsumer,
     ...props }: FlexiApexChartProps) => {
     const transformer = useDataTransformer(props.type, {
         seriesOptions,
         transformOptions,
-        enhanceData
+        enhanceData,
+        getChartConsumer
     });
     const { series, ...o } = transformer.transform(data);
     const opt = extend(options, o);
