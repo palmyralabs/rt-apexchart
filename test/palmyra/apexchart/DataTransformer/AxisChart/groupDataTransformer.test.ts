@@ -1,10 +1,7 @@
 import { expect, test } from 'vitest';
-import { IOptions, useDataTransformer } from '../../../../../src/palmyra/apexchart/DataTransformer';
-import { ITransformOptions } from '../../../../../src/palmyra/chart';
+import { useDataTransformer } from '../../../../../src/palmyra/apexchart/DataTransformer';
+import { ISeriesOptions, ITransformOptions } from '../../../../../src/palmyra/chart';
 import getGroupAxisChartConsumer from '../../../../../src/palmyra/apexchart/utils/GroupAxisChartConsumer';
-import { group } from 'console';
-import { groupStackValueProperty } from 'ag-charts-community/dist/types/src/module-support';
-import { year } from 'ag-charts-community/dist/types/src/sparklines-util';
 
 
 test('Group Data Transformer, DefaultKeys', () => {
@@ -18,10 +15,11 @@ test('Group Data Transformer, DefaultKeys', () => {
     ];
 
     const getChartConsumer = getGroupAxisChartConsumer;
-    // const transformOptions = {}
 
-    const transformOptions: ITransformOptions = { xKey: 'year', yKey: ['value'], groupKey: 'name' }
-    const transformer = useDataTransformer('bar', { transformOptions, getChartConsumer });
+    const seriesOptions: ISeriesOptions[] = [{ 'color': 'red' }]
+    const transformOptions: ITransformOptions = { xKey: 'year', yKey: ['value'], groupKey: 'name', }
+
+    const transformer = useDataTransformer('bar', { transformOptions, getChartConsumer, seriesOptions });
     const actual = transformer.transform(data);
 
     const expected = {
@@ -29,7 +27,8 @@ test('Group Data Transformer, DefaultKeys', () => {
             [
                 {
                     name: 'Marine Sprite',
-                    data: [44, 55, 41]
+                    data: [44, 55, 41],
+                    color: 'red'
                 },
                 {
                     name: 'Striking Calf',
@@ -37,15 +36,13 @@ test('Group Data Transformer, DefaultKeys', () => {
                 }
             ],
         xaxis: {
-            categories: [2008, 2009, 2010],
-        },
+            categories: [2008, 2009, 2010]
+        }
     }
 
-    console.log("expect", expect)
-    console.log("actual", actual)
+
     expect(actual).toEqual(expected)
 })
 
 
 
-  
