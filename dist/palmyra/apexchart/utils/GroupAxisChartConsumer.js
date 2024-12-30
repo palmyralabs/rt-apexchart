@@ -1,17 +1,17 @@
 import { extend as A } from "./ObjectUtils.js";
-const R = (n, p) => {
-  const { seriesOptions: x } = p || {}, y = n.xKeyAccessor, g = n.yKeyAccessors[0], l = n.groupKey;
+const R = (n, u) => {
+  const x = u.seriesOptions || {}, y = n.xKeyAccessor, g = n.yKeyAccessors[0], l = n.groupKey;
   var r = {};
   const a = [];
   var o = {};
   return { initialize: () => {
   }, processRow: (c, m, t) => {
-    const s = y(c, t), e = l(c, t), u = g(c, t);
+    const s = y(c, t), e = l(c, t), p = g(c, t);
     if (r[s]) {
       const i = r[s];
-      i[e] = u;
+      i[e] = p;
     } else {
-      const i = { [e]: u };
+      const i = { [e]: p };
       r[s] = i, a.push(s);
     }
     o[e] || (o[e] = { name: e, data: [] });

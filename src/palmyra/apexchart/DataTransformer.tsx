@@ -6,7 +6,7 @@ import getNonAxisChartConsumer from "./utils/nonAxisChartConsumer";
 
 
 interface IOptions extends IDataTransformOptions {
-    getChartConsumer: ChartConsumerGenerator
+    getChartConsumer?: ChartConsumerGenerator
 }
 
 const getConsumer = (type: chartType, props: IOptions) => {
@@ -43,3 +43,5 @@ const useDataTransformer = (type: chartType, props: IOptions): DataTransformer<a
 }
 
 export { useDataTransformer }
+
+export type { IOptions }

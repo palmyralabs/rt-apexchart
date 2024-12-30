@@ -1,8 +1,10 @@
-import { FlexiApexChart as t } from "./FlexiApexChart.js";
-import { PalmyraApexChart as a } from "./PalmyraApexChart.js";
+import { FlexiApexChart as a } from "./FlexiApexChart.js";
+import { PalmyraApexChart as t } from "./PalmyraApexChart.js";
 import { ReactApexChart as p } from "./ReactApexChart.js";
+import { useDataTransformer as f } from "./DataTransformer.js";
 export {
-  t as FlexiApexChart,
-  a as PalmyraApexChart,
-  p as ReactApexChart
+  a as FlexiApexChart,
+  t as PalmyraApexChart,
+  p as ReactApexChart,
+  f as useDataTransformer
 };

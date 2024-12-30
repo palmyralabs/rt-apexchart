@@ -6,7 +6,7 @@ import { extend } from "./ObjectUtils";
 
 const getGroupAxisChartConsumer: ChartConsumerGenerator = (options: IChartConsumerOptions,
     props: IDataTransformOptions): DataConsumer<any, any> => {
-    const { seriesOptions } = props || {};
+    const seriesOptions = props.seriesOptions || {};
 
     const xKeyAccessor = options.xKeyAccessor;
     const yKeyAccessor = options.yKeyAccessors[0];
