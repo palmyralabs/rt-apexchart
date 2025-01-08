@@ -106,15 +106,19 @@ const ReactApexChart = ({
     };
 
     const extend = (target, ...sources) => {
-        let output = { ...target };
+        if(target && !isObject(target)){
+            console.error("target of " + typeof target + " is not supported");
+        }
+        
+        let output = target ? { ...target } : {};
         sources.forEach((source) => {
-            if (isObject(target) && isObject(source)) {
+            if (isObject(source)) {
                 Object.keys(source).forEach((key) => {
                     if (isObject(source[key])) {
-                        if (!(key in target)) {
+                        if (!(key in output)) {
                             Object.assign(output, { [key]: source[key] });
                         } else {
-                            output[key] = extend(target[key], source[key]);
+                            output[key] = extend(output[key], source[key]);
                         }
                     } else {
                         Object.assign(output, { [key]: source[key] });

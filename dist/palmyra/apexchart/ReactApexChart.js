@@ -7,10 +7,10 @@ function y(n, e, c = /* @__PURE__ */ new WeakSet()) {
     return !1;
   if (c.has(n) || c.has(e)) return !0;
   c.add(n), c.add(e);
-  const f = Object.keys(n), s = Object.keys(e);
-  if (f.length !== s.length) return !1;
-  for (let l of f)
-    if (!s.includes(l) || !y(n[l], e[l], c))
+  const o = Object.keys(n), f = Object.keys(e);
+  if (o.length !== f.length) return !1;
+  for (let l of o)
+    if (!f.includes(l) || !y(n[l], e[l], c))
       return !1;
   return !0;
 }
@@ -18,33 +18,34 @@ const S = ({
   type: n = "line",
   width: e = "100%",
   height: c = "auto",
-  series: f,
-  options: s = {},
+  series: o,
+  options: f = {},
   ...l
 }) => {
   const g = O(null);
   let t = O(null);
   const i = O({});
   C(() => {
-    i.current = s;
+    i.current = f;
     const r = g.current;
-    return t.current = new w(r, h()), t.current.render(), () => {
+    return t.current = new w(r, d()), t.current.render(), () => {
       t.current && typeof t.current.destroy == "function" && t.current.destroy();
     };
   }, []), C(() => {
-    const r = t.current.w.config.series, p = !y(r, f), a = !y(i.current, s) || c !== t.current.opts.chart.height || e !== t.current.opts.chart.width;
-    (p || a) && (p ? a ? t.current.updateOptions(h()) : t.current.updateSeries(f) : t.current.updateOptions(h())), i.current = s;
-  }, [s, f, c, e]);
-  const h = () => x(l, s, {
+    const r = t.current.w.config.series, p = !y(r, o), u = !y(i.current, f) || c !== t.current.opts.chart.height || e !== t.current.opts.chart.width;
+    (p || u) && (p ? u ? t.current.updateOptions(d()) : t.current.updateSeries(o) : t.current.updateOptions(d())), i.current = f;
+  }, [f, o, c, e]);
+  const d = () => x(l, f, {
     chart: { type: n, height: c, width: e },
-    series: f
-  }), d = (r) => r && typeof r == "object" && !Array.isArray(r), x = (r, ...p) => {
-    let a = { ...r };
-    return p.forEach((o) => {
-      d(r) && d(o) && Object.keys(o).forEach((u) => {
-        d(o[u]) ? u in r ? a[u] = x(r[u], o[u]) : Object.assign(a, { [u]: o[u] }) : Object.assign(a, { [u]: o[u] });
+    series: o
+  }), h = (r) => r && typeof r == "object" && !Array.isArray(r), x = (r, ...p) => {
+    r && !h(r) && console.error("target of " + typeof r + " is not supported");
+    let u = r ? { ...r } : {};
+    return p.forEach((a) => {
+      h(a) && Object.keys(a).forEach((s) => {
+        h(a[s]) ? s in u ? u[s] = x(u[s], a[s]) : Object.assign(u, { [s]: a[s] }) : Object.assign(u, { [s]: a[s] });
       });
-    }), a;
+    }), u;
   };
   return /* @__PURE__ */ m("div", { ref: g });
 };
