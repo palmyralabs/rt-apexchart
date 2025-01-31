@@ -1,29 +1,30 @@
-import { getArrayTransformer as n, getObjectTransformer as s } from "@palmyralabs/ts-utils";
+import { getArrayTransformer as s, getObjectTransformer as n } from "@palmyralabs/ts-utils";
 import { generateAccessors as o } from "../chart/dataAccessor/AccessorGenerator.js";
-import a from "./utils/AxisChartConsumer.js";
+import t from "./utils/AxisChartConsumer.js";
 import c from "./utils/nonAxisChartConsumer.js";
-const m = (t, r) => {
+const m = (a, r) => {
   const e = o(r.transformOptions);
   if (r.getChartConsumer)
     return r.getChartConsumer(e, r);
-  switch (t) {
+  switch (a) {
     case "bar":
     case "line":
     case "area":
     case "radar":
     case "scatter":
     case "bubble":
-      return a(e, r);
+      return t(e, r);
     case "donut":
     case "pie":
     case "polarArea":
+    case "radialBar":
       return c(e, r);
     default:
-      return a(e, r);
+      return t(e, r);
   }
-}, d = (t, r) => {
-  const e = m(t, r);
-  return (r.transformOptions.dataType || "array") == "array" ? n(e) : s(e);
+}, d = (a, r) => {
+  const e = m(a, r);
+  return (r.transformOptions.dataType || "array") == "array" ? s(e) : n(e);
 };
 export {
   d as useDataTransformer

@@ -26,6 +26,7 @@ const getConsumer = (type: chartType, props: IOptions) => {
         case 'donut':
         case 'pie':
         case 'polarArea':
+        case 'radialBar':
             return getNonAxisChartConsumer(consumerOptions, props);
         default:
             return getAxisChartConsumer(consumerOptions, props);
