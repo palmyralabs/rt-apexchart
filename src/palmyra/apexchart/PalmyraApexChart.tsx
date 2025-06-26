@@ -31,6 +31,14 @@ const PalmyraApexChart = (props: ReactApexChartProps) => {
         fetch()
     }, [endPoint, filter]);
 
+    if (data === null) {
+        return <div>Loading...</div>;
+    }
+
+    if (data.length === 0) {
+        return <div>No data available</div>;
+    }
+
     return <FlexiApexChart {...options} data={data} />
 }
 
