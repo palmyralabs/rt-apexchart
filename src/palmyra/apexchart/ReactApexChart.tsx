@@ -71,6 +71,7 @@ const ReactApexChart = ({
         const prevSeries = chart.current.w.config.series
 
         const seriesChanged = !deepEqual(prevSeries, series)
+        
         const optionsChanged =
             !deepEqual(prevOptions.current, options) ||
             height !== chart.current.opts.chart.height ||
@@ -86,6 +87,7 @@ const ReactApexChart = ({
             } else {
                 // both might be changed
                 chart.current.updateOptions(getConfig());
+                chart.current.updateSeries(series);
             }
         }
         prevOptions.current = options
@@ -94,8 +96,7 @@ const ReactApexChart = ({
 
     const getConfig = () => {
         const newOptions = {
-            chart: { type, height, width },
-            series
+            chart: { type, height, width }
         };
         const r = extend(restProps, options, newOptions);
         return r;
