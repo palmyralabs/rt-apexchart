@@ -96,7 +96,8 @@ const ReactApexChart = ({
 
     const getConfig = () => {
         const newOptions = {
-            chart: { type, height, width }
+            chart: { type, height, width },
+            series
         };
         const r = extend(restProps, options, newOptions);
         return r;
