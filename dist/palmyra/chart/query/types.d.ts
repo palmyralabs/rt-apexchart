@@ -3,6 +3,7 @@ interface RemoteQueryOptions extends QueryOptions {
     storeFactory?: ChartStoreFactory<any, any>;
     endPoint: IEndPoint;
     endPointVars?: IEndPointOptions;
+    preProcess?: <T, X>(d: T | undefined) => X | undefined;
 }
 interface QueryOptions {
     filter?: Record<string, any>;

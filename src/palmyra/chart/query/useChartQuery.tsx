@@ -3,6 +3,7 @@ import { useContext, useRef } from "react";
 import { RemoteQueryOptions } from "./types";
 import { ChartStoreFactoryContext } from "./ChartFactoryContext";
 
+const noop = (d: any) => d;
 
 interface Callback {
     onData: (d: any) => void;
@@ -12,6 +13,7 @@ interface Callback {
 const useChartQuery = (props: RemoteQueryOptions, callback: Callback) => {
     const ev = useRef<IEndPointOptions>(props.endPointVars || {});
     const filterRef = useRef<any>(props.filter || {});
+    const preProcess = props.preProcess || noop;
 
     const defaultFilter = {};
     const storeFactory = props.storeFactory || useContext(ChartStoreFactoryContext);
@@ -35,7 +37,7 @@ const useChartQuery = (props: RemoteQueryOptions, callback: Callback) => {
     }
 
     const setNoData = () => {
-        setResult(undefined);
+        setResult(preProcess(undefined));
     }
 
     const fetch = () => {
@@ -44,7 +46,7 @@ const useChartQuery = (props: RemoteQueryOptions, callback: Callback) => {
         if (storeFactory) {
             try {
                 storeFactory.getChartStore({}, props.endPoint).query(params).then((d: any) => {
-                    setResult(d);
+                    setResult(preProcess(d));
                 }).catch((e) => {
                     var r = e.response ? e.response : e;
                     console.error("error while fetching", r);

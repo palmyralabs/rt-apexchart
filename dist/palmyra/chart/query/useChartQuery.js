@@ -1,40 +1,40 @@
-import { useRef as l, useContext as y } from "react";
+import { useRef as d, useContext as P } from "react";
 import { ChartStoreFactoryContext as F } from "./ChartFactoryContext.js";
-const v = (e, o) => {
-  const s = l(e.endPointVars || {}), c = l(e.filter || {}), d = {}, a = e.storeFactory || y(F), h = () => {
-    const r = s.current, t = c.current;
+const p = (e) => e, V = (e, o) => {
+  const n = d(e.endPointVars || {}), c = d(e.filter || {}), a = e.preProcess || p, h = {}, i = e.storeFactory || P(F), m = () => {
+    const r = n.current, t = c.current;
     return {
       endPointVars: r,
-      filter: { ...t, ...d }
+      filter: { ...t, ...h }
     };
-  }, i = (r) => {
+  }, f = (r) => {
     o.onData(r);
-  }, f = () => {
+  }, u = () => {
     o.onError && o.onError();
-  }, m = () => {
-    i(void 0);
-  }, n = () => {
-    const r = h();
-    if (a)
+  }, y = () => {
+    f(a(void 0));
+  }, s = () => {
+    const r = m();
+    if (i)
       try {
-        a.getChartStore({}, e.endPoint).query(r).then((t) => {
-          i(t);
+        i.getChartStore({}, e.endPoint).query(r).then((t) => {
+          f(a(t));
         }).catch((t) => {
-          var u = t.response ? t.response : t;
-          console.error("error while fetching", u), m();
+          var l = t.response ? t.response : t;
+          console.error("error while fetching", l), y();
         });
       } catch (t) {
-        console.error(t), f();
+        console.error(t), u();
       }
     else
-      console.error("Store is not provided for the Grid"), f();
+      console.error("Store is not provided for the Grid"), u();
   };
-  return { fetch: n, setFilter: (r, t = !1) => {
-    c.current = r, t || n();
+  return { fetch: s, setFilter: (r, t = !1) => {
+    c.current = r, t || s();
   }, setEndPointVars: (r, t = !1) => {
-    s.current = r, t || n();
+    n.current = r, t || s();
   } };
 };
 export {
-  v as useChartQuery
+  V as useChartQuery
 };

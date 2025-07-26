@@ -1,9 +1,10 @@
 import { ChartStoreFactory, IEndPoint, IEndPointOptions } from "@palmyralabs/palmyra-wire"
 
-interface RemoteQueryOptions extends QueryOptions{
+interface RemoteQueryOptions extends QueryOptions {
     storeFactory?: ChartStoreFactory<any, any>,
     endPoint: IEndPoint,
-    endPointVars?: IEndPointOptions
+    endPointVars?: IEndPointOptions,
+    preProcess?: <T, X>(d: T | undefined) => X | undefined
 }
 
 interface QueryOptions {
