@@ -54,7 +54,7 @@ const PalmyraApexChart = (props: ReactApexChartProps) => {
     }
 
     return (
-        data.length !== 0 ? <FlexiApexChart {...options} data={data} /> :
+        data?.length !== 0 ? <FlexiApexChart {...options} data={data} /> :
             <FlexiApexChart {...chartOptions} data={[]} />)
 }
 
