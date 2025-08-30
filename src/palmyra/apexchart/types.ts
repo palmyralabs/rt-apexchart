@@ -46,8 +46,9 @@ interface FlexiApexChartProps extends Omit<ReactApexChartProps, 'series'>, IData
 }
 
 interface IPalmyraApexChart {
-    setEndPointOptions: (d: IEndPointOptions) => void,
-    setFilter: (filter: any) => void,
+    setEndPointOptions?: (d: IEndPointOptions) => void,
+    setFilter?: (filter: any) => void,
+    refresh?: () => void
 }
 
 interface ReactApexChartProps extends ApexChartsType.ApexOptions {

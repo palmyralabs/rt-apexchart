@@ -66,26 +66,23 @@ const useChartQuery = (props: RemoteQueryOptions, callback: Callback) => {
         }
     }
 
-    useEffect(() => {
+    const refresh = () => {
         fetch();
+    }
+
+    useEffect(() => {
+        refresh();
     }, [filter, endPointVars])
 
-    const setEndPointVars = (options: IEndPointOptions, deferFetch: boolean = false) => {
+    const setEndPointVars = (options: IEndPointOptions) => {
         _setEndPointVars(options);
-        if (!deferFetch) {
-            fetch();
-        }
     }
 
-    const setFilter = (filter: any, deferFetch: boolean = false) => {
+    const setFilter = (filter: any) => {
         _setFilter(filter);
-        if (!deferFetch) {
-            fetch();
-        }
     }
 
-    return { fetch, setFilter, setEndPointVars }
+    return { setFilter, setEndPointVars }
 }
 
 export { useChartQuery };
-// export type { AsyncRemoteQueryOptions }

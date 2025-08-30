@@ -1,43 +1,45 @@
-import { useContext as V, useState as h, useEffect as P } from "react";
-import { ChartStoreFactoryContext as C } from "./ChartFactoryContext.js";
-const S = (t) => t, q = (t, s) => {
-  const n = t.preProcess || S, m = {}, i = t.storeFactory || V(C), [a, c] = h(t.filter), [f, l] = h(t.endPointVars);
-  P(() => {
-    c(t.filter), l(t.endPointVars);
+import { useContext as C, useState as u, useEffect as h } from "react";
+import { ChartStoreFactoryContext as S } from "./ChartFactoryContext.js";
+const g = (t) => t, Q = (t, o) => {
+  const s = t.preProcess || g, P = {}, n = t.storeFactory || C(S), [c, i] = u(t.filter), [a, f] = u(t.endPointVars);
+  h(() => {
+    i(t.filter), f(t.endPointVars);
   }, [t.filter, t.endPointVars]);
-  const y = () => ({
-    endPointVars: f,
-    filter: { ...a, ...m }
-  }), d = (r) => {
-    s.onData(r);
-  }, u = () => {
-    s.onError && s.onError();
+  const m = () => ({
+    endPointVars: a,
+    filter: { ...c, ...P }
+  }), d = (e) => {
+    o.onData(e);
+  }, l = () => {
+    o.onError && o.onError();
+  }, y = () => {
+    d(s(void 0));
   }, E = () => {
-    d(n(void 0));
-  }, o = () => {
-    const r = y();
-    if (i)
+    const e = m();
+    if (n)
       try {
-        i.getChartStore({}, t.endPoint).query(r).then((e) => {
-          d(n(e));
-        }).catch((e) => {
-          var F = e.response ? e.response : e;
-          console.error("error while fetching", F), E();
+        n.getChartStore({}, t.endPoint).query(e).then((r) => {
+          d(s(r));
+        }).catch((r) => {
+          var V = r.response ? r.response : r;
+          console.error("error while fetching", V), y();
         });
-      } catch (e) {
-        console.error(e), u();
+      } catch (r) {
+        console.error(r), l();
       }
     else
-      console.error("Store is not provided for the Grid"), u();
+      console.error("Store is not provided for the Grid"), l();
+  }, F = () => {
+    E();
   };
-  return P(() => {
-    o();
-  }, [a, f]), { fetch: o, setFilter: (r, e = !1) => {
-    c(r), e || o();
-  }, setEndPointVars: (r, e = !1) => {
-    l(r), e || o();
+  return h(() => {
+    F();
+  }, [c, a]), { setFilter: (e) => {
+    i(e);
+  }, setEndPointVars: (e) => {
+    f(e);
   } };
 };
 export {
-  q as useChartQuery
+  Q as useChartQuery
 };

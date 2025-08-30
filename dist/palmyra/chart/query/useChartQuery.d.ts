@@ -5,8 +5,7 @@ interface Callback {
     onError?: () => void;
 }
 declare const useChartQuery: (props: RemoteQueryOptions, callback: Callback) => {
-    fetch: () => void;
-    setFilter: (filter: any, deferFetch?: boolean) => void;
-    setEndPointVars: (options: IEndPointOptions, deferFetch?: boolean) => void;
+    setFilter: (filter: any) => void;
+    setEndPointVars: (options: IEndPointOptions) => void;
 };
 export { useChartQuery };

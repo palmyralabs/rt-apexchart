@@ -27,9 +27,10 @@ const PalmyraApexChart = forwardRef(function PalmyraApexChart(props: ReactApexCh
                 setEndPointVars(d)
             },
             setFilter(f) {
-                console.log(f, "ff");
-
                 setFilter(f);
+            },
+            refresh() {
+                
             }
         }
     }, [])
