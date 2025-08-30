@@ -1,8 +1,8 @@
-import { forwardRef, useEffect, useImperativeHandle, useRef, useState, MutableRefObject } from "react";
+import { forwardRef, MutableRefObject, useImperativeHandle, useRef, useState } from "react";
 import { RemoteQueryOptions } from "../chart/query/types";
+import { useChartQuery } from "../chart/query/useChartQuery";
 import { FlexiApexChart } from "./FlexiApexChart";
 import { FlexiApexChartProps, IPalmyraApexChart } from "./types";
-import { useChartQuery } from "../chart/query/useChartQuery";
 
 
 interface ReactApexChartProps extends Omit<FlexiApexChartProps, 'data'>, RemoteQueryOptions { }
@@ -15,7 +15,7 @@ const PalmyraApexChart = forwardRef(function PalmyraApexChart(props: ReactApexCh
 
     const [data, onData] = useState(null);
 
-    const { fetch, setFilter, setEndPointVars } = useChartQuery(props, {
+    const { setFilter, setEndPointVars } = useChartQuery(props, {
         onData
     });
 
@@ -27,14 +27,12 @@ const PalmyraApexChart = forwardRef(function PalmyraApexChart(props: ReactApexCh
                 setEndPointVars(d)
             },
             setFilter(f) {
+                console.log(f, "ff");
+
                 setFilter(f);
             }
         }
     }, [])
-
-    useEffect(() => {
-        fetch()
-    }, []);
 
     if (data === null) {
         return <div>Loading...</div>;
@@ -63,4 +61,4 @@ const PalmyraApexChart = forwardRef(function PalmyraApexChart(props: ReactApexCh
             <FlexiApexChart {...chartOptions} data={[]} />)
 });
 
-export { PalmyraApexChart }
+export { PalmyraApexChart };

@@ -1,7 +1,7 @@
 import { IEndPointOptions, QueryRequest } from "@palmyralabs/palmyra-wire";
-import { useContext, useRef } from "react";
-import { RemoteQueryOptions } from "./types";
+import { useContext, useEffect, useState } from "react";
 import { ChartStoreFactoryContext } from "./ChartFactoryContext";
+import { RemoteQueryOptions } from "./types";
 
 const noop = (d: any) => d;
 
@@ -11,16 +11,20 @@ interface Callback {
 }
 
 const useChartQuery = (props: RemoteQueryOptions, callback: Callback) => {
-    const ev = useRef<IEndPointOptions>(props.endPointVars || {});
-    const filterRef = useRef<any>(props.filter || {});
     const preProcess = props.preProcess || noop;
 
     const defaultFilter = {};
     const storeFactory = props.storeFactory || useContext(ChartStoreFactoryContext);
 
+    const [filter, _setFilter] = useState<any>(props.filter);
+    const [endPointVars, _setEndPointVars] = useState(props.endPointVars);
+
+    useEffect(() => {
+        _setFilter(props.filter);
+        _setEndPointVars(props.endPointVars)
+    }, [props.filter, props.endPointVars]);
+
     const getQueryRequest = (): QueryRequest => {
-        const endPointVars = ev.current;
-        const filter = filterRef.current;
         const params: QueryRequest = {
             endPointVars, filter: { ...filter, ...defaultFilter }
         };
@@ -62,15 +66,19 @@ const useChartQuery = (props: RemoteQueryOptions, callback: Callback) => {
         }
     }
 
+    useEffect(() => {
+        fetch();
+    }, [filter, endPointVars])
+
     const setEndPointVars = (options: IEndPointOptions, deferFetch: boolean = false) => {
-        ev.current = options;
+        _setEndPointVars(options);
         if (!deferFetch) {
             fetch();
         }
     }
 
     const setFilter = (filter: any, deferFetch: boolean = false) => {
-        filterRef.current = filter;
+        _setFilter(filter);
         if (!deferFetch) {
             fetch();
         }
@@ -79,5 +87,5 @@ const useChartQuery = (props: RemoteQueryOptions, callback: Callback) => {
     return { fetch, setFilter, setEndPointVars }
 }
 
-export { useChartQuery }
+export { useChartQuery };
 // export type { AsyncRemoteQueryOptions }
