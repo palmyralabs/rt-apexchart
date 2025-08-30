@@ -1,28 +1,31 @@
 import { jsx as r } from "react/jsx-runtime";
-import { useState as u, useEffect as e } from "react";
-import { FlexiApexChart as l } from "./FlexiApexChart.js";
-import { useChartQuery as h } from "../chart/query/useChartQuery.js";
-const P = (n) => {
+import { forwardRef as m, useState as p, useRef as h, useImperativeHandle as x, useEffect as g } from "react";
+import { FlexiApexChart as i } from "./FlexiApexChart.js";
+import { useChartQuery as v } from "../chart/query/useChartQuery.js";
+const V = m(function(o, n) {
   const {
-    storeFactory: x,
-    endPoint: s,
-    endPointVars: a,
-    filter: o,
-    sortOrder: g,
-    ...i
-  } = n, [t, c] = u(null), { fetch: f, setFilter: d, setEndPointVars: m } = h(n, {
-    onData: c
-  });
-  if (e(() => {
-    d(o);
-  }, [o]), e(() => {
-    m(a);
-  }, [a]), e(() => {
-    f();
-  }, [s, o]), t === null)
+    storeFactory: P,
+    endPoint: A,
+    endPointVars: F,
+    filter: C,
+    sortOrder: D,
+    ...a
+  } = o, [t, s] = p(null), { fetch: l, setFilter: f, setEndPointVars: c } = v(o, {
+    onData: s
+  }), d = n || h(null);
+  if (x(d, () => ({
+    setEndPointOptions(e) {
+      c(e);
+    },
+    setFilter(e) {
+      f(e);
+    }
+  }), []), g(() => {
+    l();
+  }, []), t === null)
     return /* @__PURE__ */ r("div", { children: "Loading..." });
-  const p = {
-    ...i,
+  const u = {
+    ...a,
     noData: {
       text: "No Data Available",
       align: "center",
@@ -36,8 +39,8 @@ const P = (n) => {
       }
     }
   };
-  return (t == null ? void 0 : t.length) !== 0 ? /* @__PURE__ */ r(l, { ...i, data: t }) : /* @__PURE__ */ r(l, { ...p, data: [] });
-};
+  return (t == null ? void 0 : t.length) !== 0 ? /* @__PURE__ */ r(i, { ...a, data: t }) : /* @__PURE__ */ r(i, { ...u, data: [] });
+});
 export {
-  P as PalmyraApexChart
+  V as PalmyraApexChart
 };

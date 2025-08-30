@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState, MutableRefObject } from "react";
 import { RemoteQueryOptions } from "../chart/query/types";
 import { FlexiApexChart } from "./FlexiApexChart";
-import { FlexiApexChartProps } from "./types";
+import { FlexiApexChartProps, IPalmyraApexChart } from "./types";
 import { useChartQuery } from "../chart/query/useChartQuery";
 
 
 interface ReactApexChartProps extends Omit<FlexiApexChartProps, 'data'>, RemoteQueryOptions { }
 
-const PalmyraApexChart = (props: ReactApexChartProps) => {
+const PalmyraApexChart = forwardRef(function PalmyraApexChart(props: ReactApexChartProps, ref: MutableRefObject<IPalmyraApexChart>) {
     const {
         storeFactory, endPoint,
         endPointVars, filter, sortOrder, ...options
@@ -19,17 +19,22 @@ const PalmyraApexChart = (props: ReactApexChartProps) => {
         onData
     });
 
-    useEffect(() => {
-        setFilter(filter);
-    }, [filter]);
+    const currentRef = ref ? ref : useRef<IPalmyraApexChart>(null);
 
-    useEffect(() => {
-        setEndPointVars(endPointVars);
-    }, [endPointVars]);
+    useImperativeHandle(currentRef, () => {
+        return {
+            setEndPointOptions(d: any) {
+                setEndPointVars(d)
+            },
+            setFilter(f) {
+                setFilter(f);
+            }
+        }
+    }, [])
 
     useEffect(() => {
         fetch()
-    }, [endPoint, filter]);
+    }, []);
 
     if (data === null) {
         return <div>Loading...</div>;
@@ -56,6 +61,6 @@ const PalmyraApexChart = (props: ReactApexChartProps) => {
     return (
         data?.length !== 0 ? <FlexiApexChart {...options} data={data} /> :
             <FlexiApexChart {...chartOptions} data={[]} />)
-}
+});
 
 export { PalmyraApexChart }

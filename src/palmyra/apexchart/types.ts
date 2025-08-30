@@ -2,6 +2,7 @@ import * as ApexChartsType from 'apexcharts'
 import { IChartConsumerOptions, ISeriesOptions, ITransformOptions } from "../chart/dataAccessor/types";
 import { ResultType } from "../chart";
 import { DataConsumer } from '@palmyralabs/ts-utils';
+import { IEndPointOptions } from '@palmyralabs/palmyra-wire';
 
 type ISeries = ApexAxisChartSeries[0];
 type ISeriesDataType = ApexAxisChartSeries[0]["data"][0];
@@ -44,6 +45,11 @@ interface FlexiApexChartProps extends Omit<ReactApexChartProps, 'series'>, IData
     getChartConsumer?: ChartConsumerGenerator
 }
 
+interface IPalmyraApexChart {
+    setEndPointOptions: (d: IEndPointOptions) => void,
+    setFilter: (filter: any) => void,
+}
+
 interface ReactApexChartProps extends ApexChartsType.ApexOptions {
     type: chartType
     width?: string;
@@ -53,4 +59,4 @@ interface ReactApexChartProps extends ApexChartsType.ApexOptions {
 }
 
 export type { ReactApexChartProps, FlexiApexChartProps, IDataTransformOptions, chartType }
-export type { ChartConsumerGenerator }
+export type { ChartConsumerGenerator, IPalmyraApexChart }

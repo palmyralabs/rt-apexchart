@@ -65,14 +65,14 @@ const useChartQuery = (props: RemoteQueryOptions, callback: Callback) => {
     const setEndPointVars = (options: IEndPointOptions, deferFetch: boolean = false) => {
         ev.current = options;
         if (!deferFetch) {
-            // fetch();
+            fetch();
         }
     }
 
     const setFilter = (filter: any, deferFetch: boolean = false) => {
         filterRef.current = filter;
         if (!deferFetch) {
-            // fetch();
+            fetch();
         }
     }
 
