@@ -1,26 +1,25 @@
-const K = (c, x) => {
-  const { seriesOptions: r } = x || {}, A = c.xKeyAccessor, y = c.yKeyAccessors;
-  var o = [];
+const b = (t, l) => {
+  const { seriesOptions: x } = l || {}, A = t.xKeyAccessor, n = t.yKeyAccessors;
+  var c = [];
   const i = [];
   return { initialize: () => {
-    y.forEach((n, a) => {
-      var t;
-      const s = (t = c.yLabelAccessors) == null ? void 0 : t[a];
-      var e = { ...(r == null ? void 0 : r[a]) || {}, data: [] };
+    n.forEach((r, e) => {
+      const s = t.yLabelAccessors?.[e];
+      var a = { ...x?.[e] || {}, data: [] };
       if (s) {
-        const g = s({});
-        e.name = g;
+        const o = s({});
+        a.name = o;
       }
-      o[a] = e;
+      c[e] = a;
     });
-  }, processRow: (n, a, s) => {
-    const u = A(n, s);
-    y.forEach((l, e) => {
-      const t = l(n, s);
-      o[e].data.push(t);
-    }), i.push(u);
-  }, getResult: () => ({ series: o, xaxis: { categories: i } }) };
+  }, processRow: (r, e, s) => {
+    const y = A(r, s);
+    n.forEach((u, a) => {
+      const o = u(r, s);
+      c[a].data.push(o);
+    }), i.push(y);
+  }, getResult: () => ({ series: c, xaxis: { categories: i } }) };
 };
 export {
-  K as getCategoryAxisChartConsumer
+  b as getCategoryAxisChartConsumer
 };

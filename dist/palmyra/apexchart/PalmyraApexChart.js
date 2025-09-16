@@ -39,7 +39,7 @@ const E = m(function(o, n) {
       }
     }
   };
-  return (t == null ? void 0 : t.length) !== 0 ? /* @__PURE__ */ e(i, { ...a, data: t }) : /* @__PURE__ */ e(i, { ...d, data: [] });
+  return t?.length !== 0 ? /* @__PURE__ */ e(i, { ...a, data: t }) : /* @__PURE__ */ e(i, { ...d, data: [] });
 });
 export {
   E as PalmyraApexChart
