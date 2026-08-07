@@ -1,24 +1,24 @@
-import { jsx as x } from "react/jsx-runtime";
-import { useDataTransformer as c } from "./DataTransformer.js";
-import { ReactApexChart as h } from "./ReactApexChart.js";
-import { extend as u } from "./utils/ObjectUtils.js";
-const l = ({
-  transformOptions: t,
-  seriesOptions: o,
+import { jsx as c } from "react/jsx-runtime";
+import { useDataTransformer as i } from "./DataTransformer.js";
+import { ReactApexChart as u } from "./ReactApexChart.js";
+import { useDeepMemo as a, extend as y } from "./utils/ObjectUtils.js";
+const M = ({
+  transformOptions: o,
+  seriesOptions: t,
   enhanceData: e,
   data: m,
-  options: s,
-  getChartConsumer: n,
+  options: n,
+  getChartConsumer: f,
   ...r
 }) => {
-  const a = c(r.type, {
-    seriesOptions: o,
-    transformOptions: t,
+  const { series: p, ...s } = a(() => i(r.type, {
+    seriesOptions: t,
+    transformOptions: o,
     enhanceData: e,
-    getChartConsumer: n
-  }), { series: p, ...f } = a.transform(m), i = u(s, f);
-  return /* @__PURE__ */ x(h, { options: i, ...r, series: p });
+    getChartConsumer: f
+  }).transform(m), [r.type, m, o, t, e, f]), x = y(n, s);
+  return /* @__PURE__ */ c(u, { options: x, ...r, series: p });
 };
 export {
-  l as FlexiApexChart
+  M as FlexiApexChart
 };

@@ -2,6 +2,7 @@
 import ApexCharts from "apexcharts";
 import { useEffect, useRef } from "react";
 import { ReactApexChartProps } from "./types";
+import { deepEqual as deepEqualBase } from "./utils/ObjectUtils";
 
 
 // function omit(obj: any, keysToRemove: string[]) {
@@ -12,34 +13,15 @@ import { ReactApexChartProps } from "./types";
 //     return newObj;
 // }
 
-function deepEqual(obj1: any, obj2: any, visited = new WeakSet()) {
-    if (obj1 === obj2) return true;
-
-    if (
-        typeof obj1 !== 'object' ||
-        obj1 === null ||
-        typeof obj2 !== 'object' ||
-        obj2 === null
-    ) {
-        return false;
-    }
-
-    if (visited.has(obj1) || visited.has(obj2)) return true; // Handle circular refs
-    visited.add(obj1);
-    visited.add(obj2);
-
-    const keys1 = Object.keys(obj1);
-    const keys2 = Object.keys(obj2);
-
-    if (keys1.length !== keys2.length) return false;
-
-    for (let key of keys1) {
-        if (!keys2.includes(key) || !deepEqual(obj1[key], obj2[key], visited)) {
-            return false;
-        }
-    }
-
-    return true;
+// ApexCharts options routinely embed inline formatter callbacks
+// (yaxis.labels.formatter, tooltip.y.formatter, ...) that callers rebuild as
+// fresh functions on every render. Comparing those strictly would make this
+// check see "changed" on every render regardless of real content, forcing an
+// updateOptions() call every time. This is only a should-I-notify-the-chart
+// heuristic - not a correctness path - so it's safe to ignore function
+// identity here.
+function deepEqual(obj1: any, obj2: any) {
+    return deepEqualBase(obj1, obj2, { ignoreFunctions: true });
 }
 
 const ReactApexChart = ({
