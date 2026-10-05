@@ -23,6 +23,7 @@ export default defineConfig({
     host: "0.0.0.0"
   },
   build: {
+    copyPublicDir: false,
     lib: {
       entry: resolve(__dirname, 'src/main.ts'),
       formats: ['es']
