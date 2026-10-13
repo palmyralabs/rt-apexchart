@@ -1,14 +1,18 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const StackedBarChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'month', yKey: ['online', 'retail', 'wholesale']
             }}
                 data={data} type="bar"
-                chart={{ stacked: true }}
+                chart={{ stacked: true, events: dataPointClickEvents }}
                 plotOptions={{
                     bar: {
                         horizontal: false,

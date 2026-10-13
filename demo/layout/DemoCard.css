@@ -66,6 +66,19 @@
     padding: 16px 24px 20px 24px;
 }
 
+.demo-modal-code {
+    margin: 0;
+    padding: 16px 18px;
+    border-radius: 10px;
+    background: #1e2630;
+    color: #e6edf3;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow: auto;
+    white-space: pre;
+}
+
 .sample-data-summary {
     cursor: pointer;
     font-size: 13px;

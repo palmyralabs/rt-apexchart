@@ -1,14 +1,18 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const StreamgraphChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'month', yKey: ['productA', 'productB', 'productC', 'productD']
             }}
                 data={data} type="area"
-                chart={{ stacked: true, toolbar: { show: false } }}
+                chart={{ stacked: true, toolbar: { show: false }, events: dataPointClickEvents }}
                 stroke={{ curve: 'smooth', width: 1 }}
                 fill={{ type: 'solid', opacity: 0.85 }}
                 dataLabels={{ enabled: false }}

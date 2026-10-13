@@ -1,14 +1,19 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const BoxPlotChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'group',
                 yKey: (d: any) => [d.min, d.q1, d.median, d.q3, d.max]
             }}
                 data={data} type="boxPlot"
+                chart={{ events: dataPointClickEvents }}
                 seriesOptions={[{ name: 'Distribution' }]}
                 plotOptions={{
                     boxPlot: {

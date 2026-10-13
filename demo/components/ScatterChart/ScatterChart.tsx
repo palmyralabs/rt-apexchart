@@ -1,13 +1,31 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const ScatterChart = () => {
 
+    const { dataPointClickEvents, clicked, reset } = useDataPointClick();
+
     return (
         <div id="chart">
+            {clicked && (
+                <div style={{
+                    display: 'flex', alignItems: 'center', gap: 12,
+                    padding: '10px 14px', marginBottom: 12, borderRadius: 8,
+                    background: 'rgba(12, 119, 227, 0.08)', fontSize: 14
+                }}>
+                    <span style={{ fontWeight: 500 }}>{clicked.seriesName}</span>
+                    <span>x: {clicked.dataPoint?.x}, y: {clicked.dataPoint?.y}</span>
+                    <button onClick={reset} style={{
+                        marginLeft: 'auto', border: 'none', background: 'transparent',
+                        cursor: 'pointer', color: '#0c77e3', fontSize: 13
+                    }}>clear</button>
+                </div>
+            )}
             <FlexiApexChart transformOptions={{
                 xKey: 'x', yKey: ['sampleA', 'sampleB']
             }}
                 data={data} type="scatter"
+                chart={{ events: dataPointClickEvents }}
                 xaxis={{ type: 'numeric', tickAmount: 10 }}
                 yaxis={{ tickAmount: 7 }}
                 legend={{ position: "top" }}

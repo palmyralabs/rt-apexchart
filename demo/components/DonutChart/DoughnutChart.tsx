@@ -1,11 +1,15 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 
 
 const DoughnutChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'month', yKey: 'value',
                 yLabel: ["welcome"]
@@ -22,7 +26,7 @@ const DoughnutChart = () => {
                     }
                 }]
                 }
-                data={data} type="donut" height="350" width="600" />
+                data={data} type="donut" chart={{ events: dataPointClickEvents }} height="350" width="600" />
 
 
         </div>

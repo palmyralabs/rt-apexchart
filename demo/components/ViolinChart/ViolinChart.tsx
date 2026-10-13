@@ -1,15 +1,19 @@
 import { FlexiApexChart } from "../../../src/main";
 import 'apexcharts/violin';
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const ViolinChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'group', yKey: (d: any) => d.samples
             }}
                 data={data} type="violin"
-                chart={{ toolbar: { show: false } }}
+                chart={{ toolbar: { show: false }, events: dataPointClickEvents }}
                 legend={{ show: false }}
                 seriesOptions={[{ name: 'Distribution' }]}
                 height="350" width="900"

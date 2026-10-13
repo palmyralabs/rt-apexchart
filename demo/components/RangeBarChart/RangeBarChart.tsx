@@ -1,14 +1,19 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const RangeBarChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'task',
                 yKey: (d: any) => [d.start, d.end]
             }}
                 data={data} type="rangeBar"
+                chart={{ events: dataPointClickEvents }}
                 plotOptions={{ bar: { horizontal: true, borderRadius: 4, barHeight: '45%' } }}
                 dataLabels={{ enabled: true }}
                 seriesOptions={[{ name: 'Phase' }]}

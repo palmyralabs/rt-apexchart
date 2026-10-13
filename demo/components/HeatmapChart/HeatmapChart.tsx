@@ -1,13 +1,18 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const HeatmapChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'day', yKey: ['morning', 'noon', 'evening', 'night']
             }}
                 data={data} type="heatmap"
+                chart={{ events: dataPointClickEvents }}
                 dataLabels={{ enabled: true }}
                 colors={['#0c77e3']}
                 plotOptions={{

@@ -1,14 +1,18 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const HistogramChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'bin', yKey: 'count'
             }}
                 data={data} type="bar"
-                chart={{ toolbar: { show: false } }}
+                chart={{ toolbar: { show: false }, events: dataPointClickEvents }}
                 plotOptions={{ bar: { columnWidth: '98%', borderRadius: 0 } }}
                 colors={['#0c77e3']}
                 dataLabels={{ enabled: false }}

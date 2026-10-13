@@ -1,200 +1,51 @@
 {
     "result": [
-        {
-            "id": 1,
-            "name": "Home",
-            "code": "ui/home"
-        },
-        {
-            "id": 74,
-            "name": "Demo",
-            "code": "ui/demo"
-        },
-        {
-            "id": 75,
-            "name": "Dashboard",
-            "code": "ui/dashboard"
-        },
-        {
-            "id": 2,
-            "name": "Initial Setup",
-            "code": "ui/initialSetup"
-        },
-        {
-            "id": 4,
-            "name": "Bar Chart",
-            "code": "ui/chart/demo/barChart",
-            "parent": 30
-        },
-        {
-            "id": 6,
-            "name": "Line Chart",
-            "code": "ui/chart/demo/lineChart",
-            "parent": 30
-        },
-        {
-            "id": 7,
-            "name": "Multi Line Chart",
-            "code": "ui/chart/demo/multiLineChart",
-            "parent": 30
-        },
-        {
-            "id": 8,
-            "name": "Doughnut Chart",
-            "code": "ui/chart/demo/doughnutChart",
-            "parent": 30
-        },
-        {
-            "id": 9,
-            "name": "Pie Chart",
-            "code": "ui/chart/demo/pieChart",
-            "parent": 30
-        },
-        {
-            "id": 10,
-            "name": "Polar Area Chart",
-            "code": "ui/chart/demo/polarAreaChart",
-            "parent": 30
-        },
-        {
-            "id": 11,
-            "name": "Radar Chart",
-            "code": "ui/chart/demo/radarChart",
-            "parent": 30
-        },
-        {
-            "id": 12,
-            "name": "Grouped Bar Chart",
-            "code": "ui/chart/demo/groupedBarChart",
-            "parent": 30
-        },
-        {
-            "id": 13,
-            "name": "Stacked Bar Chart",
-            "code": "ui/chart/demo/stackedBarChart",
-            "parent": 30
-        },
-        {
-            "id": 14,
-            "name": "Scatter Chart",
-            "code": "ui/chart/demo/scatterChart",
-            "parent": 30
-        },
-        {
-            "id": 15,
-            "name": "Bubble Chart",
-            "code": "ui/chart/demo/bubbleChart",
-            "parent": 30
-        },
-        {
-            "id": 16,
-            "name": "Area Chart",
-            "code": "ui/chart/demo/areaChart",
-            "parent": 30
-        },
-        {
-            "id": 18,
-            "name": "Heatmap Chart",
-            "code": "ui/chart/demo/heatmapChart",
-            "parent": 30
-        },
-        {
-            "id": 19,
-            "name": "Treemap Chart",
-            "code": "ui/chart/demo/treemapChart",
-            "parent": 30
-        },
-        {
-            "id": 20,
-            "name": "Radial Bar Chart",
-            "code": "ui/chart/demo/radialBarChart",
-            "parent": 30
-        },
-        {
-            "id": 21,
-            "name": "Candlestick Chart",
-            "code": "ui/chart/demo/candlestickChart",
-            "parent": 30
-        },
-        {
-            "id": 22,
-            "name": "Box Plot Chart",
-            "code": "ui/chart/demo/boxPlotChart",
-            "parent": 30
-        },
-        {
-            "id": 23,
-            "name": "Range Bar Chart",
-            "code": "ui/chart/demo/rangeBarChart",
-            "parent": 30
-        },
-        {
-            "id": 24,
-            "name": "Streamgraph",
-            "code": "ui/chart/demo/streamgraphChart",
-            "parent": 30
-        },
-        {
-            "id": 25,
-            "name": "Waterfall Chart",
-            "code": "ui/chart/demo/waterfallChart",
-            "parent": 30
-        },
-        {
-            "id": 26,
-            "name": "Funnel Chart",
-            "code": "ui/chart/demo/funnelChart",
-            "parent": 30
-        },
-        {
-            "id": 27,
-            "name": "Histogram",
-            "code": "ui/chart/demo/histogramChart",
-            "parent": 30
-        },
-        {
-            "id": 28,
-            "name": "Slope Chart",
-            "code": "ui/chart/demo/slopeChart",
-            "parent": 30
-        },
-        {
-            "id": 31,
-            "name": "Gauge Chart",
-            "code": "ui/chart/demo/gaugeChart",
-            "parent": 30
-        },
-        {
-            "id": 32,
-            "name": "Sunburst Chart",
-            "code": "ui/chart/demo/sunburstChart",
-            "parent": 30
-        },
-        {
-            "id": 33,
-            "name": "Violin Chart",
-            "code": "ui/chart/demo/violinChart",
-            "parent": 30
-        },
-        {
-            "id": 17,
-            "name": "Chart Scale",
-            "code": "ui/chartScale",
-            "parent": 30
-        },
-        {
-            "id": 29,
-            "name": "Components",
-            "code": "ui/components",
-            "children": "30"
-        },
-        {
-            "id": 30,
-            "name": "Chart",
-            "code": "ui/chart",
-            "parent": 29,
-            "children": "4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 31, 32, 33"
-        }
+        { "id": 1, "name": "Home", "code": "ui/home" },
+        { "id": 74, "name": "Demo", "code": "ui/demo" },
+        { "id": 75, "name": "Dashboard", "code": "ui/dashboard" },
+        { "id": 2, "name": "Initial Setup", "code": "ui/initialSetup" },
+
+        { "id": 29, "name": "Components", "code": "ui/components", "children": "30" },
+        { "id": 30, "name": "Chart", "code": "ui/chart", "parent": 29, "children": "50, 51, 52, 53, 54, 17" },
+
+        { "id": 50, "name": "Comparison", "code": "ui/chart/comparison", "parent": 30, "children": "4, 12, 13, 23, 25" },
+        { "id": 51, "name": "Trend", "code": "ui/chart/trend", "parent": 30, "children": "6, 7, 16, 24, 28" },
+        { "id": 52, "name": "Correlation", "code": "ui/chart/correlation", "parent": 30, "children": "14, 15, 18" },
+        { "id": 53, "name": "Composition", "code": "ui/chart/composition", "parent": 30, "children": "9, 8, 10, 11, 20, 19, 26, 31, 32" },
+        { "id": 54, "name": "Financial & Statistical", "code": "ui/chart/statistical", "parent": 30, "children": "21, 22, 27, 33" },
+
+        { "id": 4, "name": "Bar Chart", "code": "ui/chart/demo/barChart", "parent": 50 },
+        { "id": 12, "name": "Grouped Bar Chart", "code": "ui/chart/demo/groupedBarChart", "parent": 50 },
+        { "id": 13, "name": "Stacked Bar Chart", "code": "ui/chart/demo/stackedBarChart", "parent": 50 },
+        { "id": 23, "name": "Range Bar Chart", "code": "ui/chart/demo/rangeBarChart", "parent": 50 },
+        { "id": 25, "name": "Waterfall Chart", "code": "ui/chart/demo/waterfallChart", "parent": 50 },
+
+        { "id": 6, "name": "Line Chart", "code": "ui/chart/demo/lineChart", "parent": 51 },
+        { "id": 7, "name": "Multi Line Chart", "code": "ui/chart/demo/multiLineChart", "parent": 51 },
+        { "id": 16, "name": "Area Chart", "code": "ui/chart/demo/areaChart", "parent": 51 },
+        { "id": 24, "name": "Streamgraph", "code": "ui/chart/demo/streamgraphChart", "parent": 51 },
+        { "id": 28, "name": "Slope Chart", "code": "ui/chart/demo/slopeChart", "parent": 51 },
+
+        { "id": 14, "name": "Scatter Chart", "code": "ui/chart/demo/scatterChart", "parent": 52 },
+        { "id": 15, "name": "Bubble Chart", "code": "ui/chart/demo/bubbleChart", "parent": 52 },
+        { "id": 18, "name": "Heatmap Chart", "code": "ui/chart/demo/heatmapChart", "parent": 52 },
+
+        { "id": 9, "name": "Pie Chart", "code": "ui/chart/demo/pieChart", "parent": 53 },
+        { "id": 8, "name": "Doughnut Chart", "code": "ui/chart/demo/doughnutChart", "parent": 53 },
+        { "id": 10, "name": "Polar Area Chart", "code": "ui/chart/demo/polarAreaChart", "parent": 53 },
+        { "id": 11, "name": "Radar Chart", "code": "ui/chart/demo/radarChart", "parent": 53 },
+        { "id": 20, "name": "Radial Bar Chart", "code": "ui/chart/demo/radialBarChart", "parent": 53 },
+        { "id": 19, "name": "Treemap Chart", "code": "ui/chart/demo/treemapChart", "parent": 53 },
+        { "id": 26, "name": "Funnel Chart", "code": "ui/chart/demo/funnelChart", "parent": 53 },
+        { "id": 31, "name": "Gauge Chart", "code": "ui/chart/demo/gaugeChart", "parent": 53 },
+        { "id": 32, "name": "Sunburst Chart", "code": "ui/chart/demo/sunburstChart", "parent": 53 },
+
+        { "id": 21, "name": "Candlestick Chart", "code": "ui/chart/demo/candlestickChart", "parent": 54 },
+        { "id": 22, "name": "Box Plot Chart", "code": "ui/chart/demo/boxPlotChart", "parent": 54 },
+        { "id": 27, "name": "Histogram", "code": "ui/chart/demo/histogramChart", "parent": 54 },
+        { "id": 33, "name": "Violin Chart", "code": "ui/chart/demo/violinChart", "parent": 54 },
+
+        { "id": 17, "name": "Chart Scale", "code": "ui/chartScale", "parent": 30 }
     ],
     "status": 200
 }

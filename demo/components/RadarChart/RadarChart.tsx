@@ -1,14 +1,18 @@
 import { FlexiApexChart } from "../../../src/main"
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const RadarChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'month', yKey: 'value',
                 yLabel: ["welcome"]
             }}
-                data={data} type="radar" height="350" width="600" />
+                data={data} type="radar" chart={{ events: dataPointClickEvents }} height="350" width="600" />
         </div>
     );
 }

@@ -35,6 +35,7 @@ import SlopeChartPage from "./pages/chart/SlopeChartPage";
 import GaugeChartPage from "./pages/chart/GaugeChartPage";
 import ViolinChartPage from "./pages/chart/ViolinChartPage";
 import SunburstChartPage from "./pages/chart/SunburstChartPage";
+import ChartScalePage from "./pages/chart/ChartScalePage";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
               <Route path="ui/dashboard" element={<DashboardPage />} />
               <Route path="ui/initialSetup" element={<InitialSetupPage />} />
               <Route path="ui/api" element={<ApiPage />} />
+              <Route path="ui/chartScale" element={<ChartScalePage />} />
               <Route path="ui/chart/demo" element={<Outlet />} >
                 <Route path="multiLineChart" element={<MultiLineChartPage />} />
                 <Route path="barChart" element={<BarChartPage />} />

@@ -1,15 +1,19 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 
 
 const ArrayLineChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{ xKey: 'month', yKey: 'value', 
                 yLabel:["welcome"]
              }}
-                data={data} type="line" height="350" width="600" />
+                data={data} type="line" chart={{ events: dataPointClickEvents }} height="350" width="600" />
         </div>
     );
 

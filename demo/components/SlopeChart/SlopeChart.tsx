@@ -1,14 +1,18 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const SlopeChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'period', yKey: ['teamA', 'teamB', 'teamC', 'teamD']
             }}
                 data={data} type="line"
-                chart={{ toolbar: { show: false } }}
+                chart={{ toolbar: { show: false }, events: dataPointClickEvents }}
                 stroke={{ curve: 'straight', width: 2 }}
                 markers={{ size: 6 }}
                 dataLabels={{ enabled: true }}

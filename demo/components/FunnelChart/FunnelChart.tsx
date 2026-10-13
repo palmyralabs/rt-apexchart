@@ -1,14 +1,18 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const FunnelChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'stage', yKey: 'count'
             }}
                 data={data} type="bar"
-                chart={{ toolbar: { show: false } }}
+                chart={{ toolbar: { show: false }, events: dataPointClickEvents }}
                 plotOptions={{
                     bar: {
                         horizontal: true,

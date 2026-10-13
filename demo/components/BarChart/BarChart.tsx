@@ -1,8 +1,20 @@
 
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 
 const BarChart = () => {
+
+    const { dataPointClickEvents, modal } = useDataPointClick({
+        title: 'Bar — clicked point',
+        render: (c) => (
+            <div style={{ fontSize: 14, lineHeight: 2.2 }}>
+                <div><span style={{ fontWeight: 500 }}>Category:</span> {c.dataPoint?.x}</div>
+                <div><span style={{ fontWeight: 500 }}>Value:</span> {c.dataPoint?.y}</div>
+                <div><span style={{ fontWeight: 500 }}>Series:</span> {c.seriesName}</div>
+            </div>
+        )
+    });
 
     function handleClick(_event: any, _chartContext: any, opts: any) {
         console.log("seriesIndex", opts.config.series[opts.seriesIndex])
@@ -12,6 +24,7 @@ const BarChart = () => {
     return (
 
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'month', yKey: 'value',
                 yLabel: ["welcome"]
@@ -51,6 +64,7 @@ const BarChart = () => {
                             console.log("beforeMount", event)
                         },
                         click: handleClick,
+                        dataPointSelection: dataPointClickEvents.dataPointSelection,
                     },
 
                 }}

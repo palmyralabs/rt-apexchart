@@ -1,13 +1,18 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const AreaChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'month', yKey: ['thisYear', 'lastYear']
             }}
                 data={data} type="area"
+                chart={{ events: dataPointClickEvents }}
                 stroke={{ curve: 'smooth', width: 2 }}
                 fill={{ type: 'gradient', gradient: { opacityFrom: 0.5, opacityTo: 0.05 } }}
                 legend={{ position: "top" }}

@@ -1,8 +1,11 @@
 
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 
 const PieChart = () => {
+
+    const { dataPointClickEvents, modal } = useDataPointClick();
 
     function handleClick(_event: any, _chartContext: any, opts: any) {
         console.log("seriesIndex", opts.config.series[opts.seriesIndex])
@@ -12,6 +15,7 @@ const PieChart = () => {
     return (
 
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'month', yKey: 'value',
                 yLabel: ["welcome"]
@@ -42,7 +46,7 @@ const PieChart = () => {
                 seriesOptions={
                     [{ name: 'month' },]}
 
-                data={data} type="pie" height="350" width="600" />
+                data={data} type="pie" chart={{ events: dataPointClickEvents }} height="350" width="600" />
         </div>
     );
 

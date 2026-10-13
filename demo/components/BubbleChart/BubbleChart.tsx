@@ -1,13 +1,18 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const BubbleChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'x', yKey: 'y', rKey: 'size'
             }}
                 data={data} type="bubble"
+                chart={{ events: dataPointClickEvents }}
                 xaxis={{ type: 'numeric', tickAmount: 10 }}
                 yaxis={{ tickAmount: 7 }}
                 legend={{ position: "top" }}

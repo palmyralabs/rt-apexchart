@@ -1,7 +1,10 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 import { IenhanceData } from "../../../src/palmyra/apexchart/types";
 
 const WaterfallChart = () => {
+
+    const { dataPointClickEvents, modal } = useDataPointClick();
 
     const enhanceData: IenhanceData = (_x, _y, row: any) => {
         if (row.kind === 'total') return { fillColor: '#0c77e3' };
@@ -10,11 +13,12 @@ const WaterfallChart = () => {
 
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'label', yKey: (d: any) => [d.y0, d.y1]
             }}
                 data={data} type="rangeBar"
-                chart={{ toolbar: { show: false } }}
+                chart={{ toolbar: { show: false }, events: dataPointClickEvents }}
                 plotOptions={{ bar: { horizontal: false, columnWidth: '55%', borderRadius: 2 } }}
                 enhanceData={enhanceData}
                 dataLabels={{ enabled: false }}

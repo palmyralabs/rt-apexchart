@@ -1,14 +1,18 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const TreemapChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'name', yKey: 'value'
             }}
                 data={data} type="treemap"
-                chart={{ toolbar: { show: false }, animations: { enabled: false } }}
+                chart={{ toolbar: { show: false }, animations: { enabled: false }, events: dataPointClickEvents }}
                 legend={{ show: false }}
                 dataLabels={{ enabled: true }}
                 seriesOptions={[{ name: 'Share' }]}

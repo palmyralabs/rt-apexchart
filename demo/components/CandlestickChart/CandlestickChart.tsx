@@ -1,14 +1,19 @@
 import { FlexiApexChart } from "../../../src/main";
+import { useDataPointClick } from "../../util/useDataPointClick";
 
 const CandlestickChart = () => {
 
+    const { dataPointClickEvents, modal } = useDataPointClick();
+
     return (
         <div id="chart">
+            {modal}
             <FlexiApexChart transformOptions={{
                 xKey: 'date',
                 yKey: (d: any) => [d.open, d.high, d.low, d.close]
             }}
                 data={data} type="candlestick"
+                chart={{ events: dataPointClickEvents }}
                 xaxis={{ type: 'category' }}
                 yaxis={{ tooltip: { enabled: true } }}
                 seriesOptions={[{ name: 'Price' }]}
