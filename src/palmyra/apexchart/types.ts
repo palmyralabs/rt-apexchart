@@ -8,6 +8,31 @@ type ISeries = ApexAxisChartSeries[0];
 type ISeriesDataType = ApexAxisChartSeries[0]["data"][0];
 type chartType = ApexChart["type"];
 
+type ChartType =
+    | 'line'
+    | 'area'
+    | 'bar'
+    | 'pie'
+    | 'donut'
+    | 'radialBar'
+    | 'scatter'
+    | 'bubble'
+    | 'heatmap'
+    | 'candlestick'
+    | 'boxPlot'
+    | 'radar'
+    | 'polarArea'
+    | 'rangeBar'
+    | 'rangeArea'
+    | 'treemap'
+    | 'violin'
+    | 'histogram'
+    | 'waterfall'
+    | 'streamgraph'
+    | 'sunburst'
+    | 'funnel'
+    | 'gauge';
+
 interface IDataEnhanced {
     fill?: ApexFill;
     fillColor?: string;
@@ -40,9 +65,15 @@ interface IDataTransformOptions {
 
 type ChartConsumerGenerator = (options: IChartConsumerOptions, props: IDataTransformOptions) => DataConsumer<any, any>;
 
+interface IChartTypeOption {
+    value: ChartType,
+    label: string
+}
+
 interface FlexiApexChartProps extends Omit<ReactApexChartProps, 'series'>, IDataTransformOptions {
     data: any,
-    getChartConsumer?: ChartConsumerGenerator
+    getChartConsumer?: ChartConsumerGenerator,
+    chartTypes?: IChartTypeOption[]
 }
 
 interface IPalmyraApexChart {
@@ -59,5 +90,5 @@ interface ReactApexChartProps extends ApexChartsType.ApexOptions {
     options?: Omit<ApexCharts.ApexOptions, 'series'>
 }
 
-export type { ReactApexChartProps, FlexiApexChartProps, IDataTransformOptions, chartType }
-export type { ChartConsumerGenerator, IPalmyraApexChart }
+export type { ReactApexChartProps, FlexiApexChartProps, IDataTransformOptions, chartType, ChartType }
+export type { ChartConsumerGenerator, IPalmyraApexChart, IChartTypeOption }

@@ -1,4 +1,5 @@
 import { FlexiApexChart } from "../../../src/main";
+import { VALUE_TYPES } from "../../util/chartTypeSets";
 import { useDataPointClick } from "../../util/useDataPointClick";
 
 const RadialBarChart = () => {
@@ -8,10 +9,10 @@ const RadialBarChart = () => {
     return (
         <div id="chart">
             {modal}
-            <FlexiApexChart transformOptions={{
+            <FlexiApexChart type="radialBar" chartTypes={VALUE_TYPES} transformOptions={{
                 xKey: 'label', yKey: 'value'
             }}
-                data={data} type="radialBar"
+                data={data}
                 chart={{ events: dataPointClickEvents }}
                 plotOptions={{
                     radialBar: {

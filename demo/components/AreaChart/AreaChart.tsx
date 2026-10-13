@@ -1,4 +1,5 @@
 import { FlexiApexChart } from "../../../src/main";
+import { MULTI_TYPES } from "../../util/chartTypeSets";
 import { useDataPointClick } from "../../util/useDataPointClick";
 
 const AreaChart = () => {
@@ -8,10 +9,10 @@ const AreaChart = () => {
     return (
         <div id="chart">
             {modal}
-            <FlexiApexChart transformOptions={{
+            <FlexiApexChart type="area" chartTypes={MULTI_TYPES} transformOptions={{
                 xKey: 'month', yKey: ['thisYear', 'lastYear']
             }}
-                data={data} type="area"
+                data={data}
                 chart={{ events: dataPointClickEvents }}
                 stroke={{ curve: 'smooth', width: 2 }}
                 fill={{ type: 'gradient', gradient: { opacityFrom: 0.5, opacityTo: 0.05 } }}

@@ -1,4 +1,5 @@
 import { FlexiApexChart } from "../../../src/main";
+import { MULTI_TYPES } from "../../util/chartTypeSets";
 import { useDataPointClick } from "../../util/useDataPointClick";
 import { IenhanceData } from "../../../src/palmyra/apexchart/types";
 import { ResultType } from "../../../src/palmyra/chart";
@@ -20,11 +21,11 @@ const GroupedBarChart = () => {
     return (
         <div id="chart">
             {modal}
-            <FlexiApexChart transformOptions={{
+            <FlexiApexChart type="bar" chartTypes={MULTI_TYPES} transformOptions={{
                 xKey: 'month', yKey: ['value', 'min', 'max'],
                 dataType: 'object'
             }}
-                data={data} type="bar"
+                data={data}
                 chart={{ events: dataPointClickEvents }}
                 // options={{ legend: { position: "top" } }}
                 legend={{ position: "top" }}

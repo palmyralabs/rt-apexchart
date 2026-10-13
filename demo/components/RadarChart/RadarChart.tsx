@@ -1,4 +1,5 @@
-import { FlexiApexChart } from "../../../src/main"
+import { FlexiApexChart } from "../../../src/main";
+import { VALUE_TYPES } from "../../util/chartTypeSets";
 import { useDataPointClick } from "../../util/useDataPointClick";
 
 const RadarChart = () => {
@@ -8,11 +9,11 @@ const RadarChart = () => {
     return (
         <div id="chart">
             {modal}
-            <FlexiApexChart transformOptions={{
+            <FlexiApexChart type="radar" chartTypes={VALUE_TYPES} transformOptions={{
                 xKey: 'month', yKey: 'value',
                 yLabel: ["welcome"]
             }}
-                data={data} type="radar" chart={{ events: dataPointClickEvents }} height="350" width="600" />
+                data={data} chart={{ events: dataPointClickEvents }} height="350" width="600" />
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import { FlexiApexChart } from "../../../src/main";
+import { MULTI_TYPES } from "../../util/chartTypeSets";
 import { useDataPointClick } from "../../util/useDataPointClick";
 
 const StreamgraphChart = () => {
@@ -8,10 +9,10 @@ const StreamgraphChart = () => {
     return (
         <div id="chart">
             {modal}
-            <FlexiApexChart transformOptions={{
+            <FlexiApexChart type="area" chartTypes={MULTI_TYPES} transformOptions={{
                 xKey: 'month', yKey: ['productA', 'productB', 'productC', 'productD']
             }}
-                data={data} type="area"
+                data={data}
                 chart={{ stacked: true, toolbar: { show: false }, events: dataPointClickEvents }}
                 stroke={{ curve: 'smooth', width: 1 }}
                 fill={{ type: 'solid', opacity: 0.85 }}

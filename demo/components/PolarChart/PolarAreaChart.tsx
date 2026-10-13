@@ -1,4 +1,5 @@
 import { FlexiApexChart } from "../../../src/main";
+import { VALUE_TYPES } from "../../util/chartTypeSets";
 import { useDataPointClick } from "../../util/useDataPointClick";
 
 const PolarAreaChart = () =>{
@@ -8,7 +9,7 @@ const PolarAreaChart = () =>{
      return(
         <div id="chart">
             {modal}
-            <FlexiApexChart transformOptions={{
+            <FlexiApexChart type="polarArea" chartTypes={VALUE_TYPES} transformOptions={{
                 xKey: 'month', yKey: 'value',
                 yLabel: ["welcome"]
             }}
@@ -29,7 +30,7 @@ const PolarAreaChart = () =>{
                   }
                 }
               }]}
-                data={data} type="polarArea" chart={{ events: dataPointClickEvents }} height="350" width="600" />
+                data={data} chart={{ events: dataPointClickEvents }} height="350" width="600" />
 
 
         </div>

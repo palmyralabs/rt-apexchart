@@ -1,5 +1,6 @@
 
 import { FlexiApexChart } from "../../../src/main";
+import { VALUE_TYPES } from "../../util/chartTypeSets";
 import { useDataPointClick } from "../../util/useDataPointClick";
 
 
@@ -16,7 +17,7 @@ const PieChart = () => {
 
         <div id="chart">
             {modal}
-            <FlexiApexChart transformOptions={{
+            <FlexiApexChart type="pie" chartTypes={VALUE_TYPES} transformOptions={{
                 xKey: 'month', yKey: 'value',
                 yLabel: ["welcome"]
             }}
@@ -46,7 +47,7 @@ const PieChart = () => {
                 seriesOptions={
                     [{ name: 'month' },]}
 
-                data={data} type="pie" chart={{ events: dataPointClickEvents }} height="350" width="600" />
+                data={data} chart={{ events: dataPointClickEvents }} height="350" width="600" />
         </div>
     );
 

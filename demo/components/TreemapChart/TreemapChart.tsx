@@ -1,4 +1,5 @@
 import { FlexiApexChart } from "../../../src/main";
+import { TREEMAP_TYPES } from "../../util/chartTypeSets";
 import { useDataPointClick } from "../../util/useDataPointClick";
 
 const TreemapChart = () => {
@@ -8,10 +9,10 @@ const TreemapChart = () => {
     return (
         <div id="chart">
             {modal}
-            <FlexiApexChart transformOptions={{
+            <FlexiApexChart type="treemap" chartTypes={TREEMAP_TYPES} transformOptions={{
                 xKey: 'name', yKey: 'value'
             }}
-                data={data} type="treemap"
+                data={data}
                 chart={{ toolbar: { show: false }, animations: { enabled: false }, events: dataPointClickEvents }}
                 legend={{ show: false }}
                 dataLabels={{ enabled: true }}

@@ -1,5 +1,6 @@
 
 import { FlexiApexChart } from "../../../src/main";
+import { VALUE_TYPES } from "../../util/chartTypeSets";
 import { useDataPointClick } from "../../util/useDataPointClick";
 
 
@@ -25,7 +26,7 @@ const BarChart = () => {
 
         <div id="chart">
             {modal}
-            <FlexiApexChart transformOptions={{
+            <FlexiApexChart type="bar" chartTypes={[{value:'area',label:'Bar'},{value:'bar',label:'Bar'}]} transformOptions={{
                 xKey: 'month', yKey: 'value',
                 yLabel: ["welcome"]
             }}
@@ -101,7 +102,7 @@ const BarChart = () => {
                     },
                 }
                 }
-                data={data} type="bar" height="350" width="600" />
+                data={data} height="350" width="600" />
         </div>
     );
 

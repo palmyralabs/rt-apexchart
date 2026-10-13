@@ -1,4 +1,5 @@
 import { FlexiApexChart } from "../../../src/main";
+import { MULTI_TYPES } from "../../util/chartTypeSets";
 import { useDataPointClick } from "../../util/useDataPointClick";
 
 const HistogramChart = () => {
@@ -8,10 +9,10 @@ const HistogramChart = () => {
     return (
         <div id="chart">
             {modal}
-            <FlexiApexChart transformOptions={{
+            <FlexiApexChart type="bar" chartTypes={MULTI_TYPES} transformOptions={{
                 xKey: 'bin', yKey: 'count'
             }}
-                data={data} type="bar"
+                data={data}
                 chart={{ toolbar: { show: false }, events: dataPointClickEvents }}
                 plotOptions={{ bar: { columnWidth: '98%', borderRadius: 0 } }}
                 colors={['#0c77e3']}

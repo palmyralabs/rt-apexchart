@@ -1,4 +1,5 @@
 import { FlexiApexChart } from "../../../src/main";
+import { BUBBLE_TYPES } from "../../util/chartTypeSets";
 import { useDataPointClick } from "../../util/useDataPointClick";
 
 const BubbleChart = () => {
@@ -8,10 +9,10 @@ const BubbleChart = () => {
     return (
         <div id="chart">
             {modal}
-            <FlexiApexChart transformOptions={{
+            <FlexiApexChart type="bubble" chartTypes={BUBBLE_TYPES} transformOptions={{
                 xKey: 'x', yKey: 'y', rKey: 'size'
             }}
-                data={data} type="bubble"
+                data={data}
                 chart={{ events: dataPointClickEvents }}
                 xaxis={{ type: 'numeric', tickAmount: 10 }}
                 yaxis={{ tickAmount: 7 }}

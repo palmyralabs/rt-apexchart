@@ -1,4 +1,5 @@
 import { FlexiApexChart } from "../../../src/main";
+import { SCATTER_TYPES } from "../../util/chartTypeSets";
 import { useDataPointClick } from "../../util/useDataPointClick";
 
 const ScatterChart = () => {
@@ -21,10 +22,10 @@ const ScatterChart = () => {
                     }}>clear</button>
                 </div>
             )}
-            <FlexiApexChart transformOptions={{
+            <FlexiApexChart type="scatter" chartTypes={SCATTER_TYPES} transformOptions={{
                 xKey: 'x', yKey: ['sampleA', 'sampleB']
             }}
-                data={data} type="scatter"
+                data={data}
                 chart={{ events: dataPointClickEvents }}
                 xaxis={{ type: 'numeric', tickAmount: 10 }}
                 yaxis={{ tickAmount: 7 }}
