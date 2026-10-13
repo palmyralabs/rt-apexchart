@@ -87,6 +87,48 @@
             "parent": 30
         },
         {
+            "id": 16,
+            "name": "Area Chart",
+            "code": "ui/chart/demo/areaChart",
+            "parent": 30
+        },
+        {
+            "id": 18,
+            "name": "Heatmap Chart",
+            "code": "ui/chart/demo/heatmapChart",
+            "parent": 30
+        },
+        {
+            "id": 19,
+            "name": "Treemap Chart",
+            "code": "ui/chart/demo/treemapChart",
+            "parent": 30
+        },
+        {
+            "id": 20,
+            "name": "Radial Bar Chart",
+            "code": "ui/chart/demo/radialBarChart",
+            "parent": 30
+        },
+        {
+            "id": 21,
+            "name": "Candlestick Chart",
+            "code": "ui/chart/demo/candlestickChart",
+            "parent": 30
+        },
+        {
+            "id": 22,
+            "name": "Box Plot Chart",
+            "code": "ui/chart/demo/boxPlotChart",
+            "parent": 30
+        },
+        {
+            "id": 23,
+            "name": "Range Bar Chart",
+            "code": "ui/chart/demo/rangeBarChart",
+            "parent": 30
+        },
+        {
             "id": 17,
             "name": "Chart Scale",
             "code": "ui/chartScale",
@@ -103,7 +145,7 @@
             "name": "Chart",
             "code": "ui/chart",
             "parent": 29,
-            "children": "4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15"
+            "children": "4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23"
         }
     ],
     "status": 200
