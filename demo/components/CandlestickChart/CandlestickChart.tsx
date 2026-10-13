@@ -19,6 +19,7 @@ const CandlestickChart = () => {
 
 }
 export default CandlestickChart
+export { data }
 
 const data = [
     { date: 'Mon', open: 51, high: 58, low: 49, close: 55 },

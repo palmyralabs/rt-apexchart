@@ -1,14 +1,29 @@
-import { ReactNode } from "react";
+import { isValidElement, ReactNode } from "react";
+import SampleData from "./SampleData";
+import ChartCode from "./ChartCode";
+import { getChartSource } from "./chartSource";
 import './DemoCard.css';
 
 interface DemoCardProps {
     title: string;
     description?: string;
     tag?: string;
+    data?: any;
+    transformOptions?: any;
     children: ReactNode;
 }
 
-const DemoCard = ({ title, description, tag, children }: DemoCardProps) => {
+const resolveChildName = (children: ReactNode): string | undefined => {
+    if (isValidElement(children) && typeof children.type === "function") {
+        const t: any = children.type;
+        return t.displayName || t.name;
+    }
+    return undefined;
+};
+
+const DemoCard = ({ title, description, tag, data, transformOptions, children }: DemoCardProps) => {
+    const code = getChartSource(resolveChildName(children));
+
     return (
         <div className="demo-card">
             <div className="demo-card-header">
@@ -23,6 +38,16 @@ const DemoCard = ({ title, description, tag, children }: DemoCardProps) => {
                     {children}
                 </div>
             </div>
+            {code && (
+                <div className="demo-card-data">
+                    <ChartCode code={code} />
+                </div>
+            )}
+            {data !== undefined && (
+                <div className="demo-card-data">
+                    <SampleData data={data} transformOptions={transformOptions} />
+                </div>
+            )}
         </div>
     );
 };

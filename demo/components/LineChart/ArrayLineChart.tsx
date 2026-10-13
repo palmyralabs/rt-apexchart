@@ -15,6 +15,7 @@ const ArrayLineChart = () => {
 
 }
 export default ArrayLineChart
+export { data }
 
 
 const data = [

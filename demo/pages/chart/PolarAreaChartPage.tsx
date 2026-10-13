@@ -1,9 +1,9 @@
 import DemoCard from "../../layout/DemoCard"
-import PolarAreaChart from "../../components/PolarChart/PolarAreaChart"
+import PolarAreaChart, { data } from "../../components/PolarChart/PolarAreaChart"
 
 const PolarAreaChartPage = () => {
     return (
-        <DemoCard title="Polar Area Chart" tag="Composition"
+        <DemoCard title="Polar Area Chart" tag="Composition" data={data}
             description="Compare categories drawn as segments where each segment radius encodes its value.">
             <PolarAreaChart />
         </DemoCard>

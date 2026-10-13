@@ -41,7 +41,7 @@
   "peerDependencies": {
     "@palmyralabs/palmyra-wire": "^1.2.0",
     "@palmyralabs/ts-utils": "^0.3.0",
-    "apexcharts": "^5.3.5",
+    "apexcharts": "^8.2.0",
     "react": "^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
@@ -50,13 +50,14 @@
     "@eslint/js": "^9.37.0",
     "@mui/icons-material": "^7.3.4",
     "@mui/material": "^7.3.4",
-    "@palmyralabs/rt-forms": "github:palmyralabs/rt-forms",
+    "@palmyralabs/rt-forms": "^0.3.0",
     "@palmyralabs/rt-forms-mui": "github:palmyralabs/rt-forms-mui",
     "@types/node": "^24.7.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.1",
     "@vitejs/plugin-react": "^5.0.4",
     "@vitejs/plugin-react-swc": "^4.1.0",
+    "apexcharts": "^8.2.0",
     "axios": "^1.12.2",
     "eslint": "^9.37.0",
     "eslint-plugin-react-hooks": "^6.1.1",

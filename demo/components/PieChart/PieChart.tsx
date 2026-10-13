@@ -48,6 +48,7 @@ const PieChart = () => {
 
 }
 export default PieChart
+export { data }
 
 
 const data = [

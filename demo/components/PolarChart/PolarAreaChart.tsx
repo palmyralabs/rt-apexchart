@@ -32,6 +32,7 @@ const PolarAreaChart = () =>{
      );
 }
 export default PolarAreaChart
+export { data }
 
 const data = [
     {

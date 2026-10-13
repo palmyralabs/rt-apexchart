@@ -1,9 +1,9 @@
 import DemoCard from "../../layout/DemoCard"
-import BarChart from "../../components/BarChart/BarChart"
+import BarChart, { data } from "../../components/BarChart/BarChart"
 
 const BarChartPage = () => {
     return (
-        <DemoCard title="Bar Chart" tag="Comparison"
+        <DemoCard title="Bar Chart" tag="Comparison" data={data}
             description="Compare a single measure across discrete categories. Best for ranking and spotting the largest and smallest values.">
             <BarChart />
         </DemoCard>

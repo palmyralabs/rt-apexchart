@@ -13,6 +13,7 @@ const RadarChart = () => {
     );
 }
 export default RadarChart
+export { data }
 
 
 const data = [

@@ -29,6 +29,7 @@ const DoughnutChart = () => {
     );
 }
 export default DoughnutChart
+export { data }
 
 
 const data = [

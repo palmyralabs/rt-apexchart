@@ -23,6 +23,7 @@ const BubbleChart = () => {
 
 }
 export default BubbleChart
+export { data }
 
 const data = [
     { x: 1, y: 22, size: 13 },

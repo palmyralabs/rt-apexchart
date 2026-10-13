@@ -35,6 +35,7 @@ const GroupedBarChart = () => {
 
 }
 export default GroupedBarChart
+export { data }
 
 
 const data = {

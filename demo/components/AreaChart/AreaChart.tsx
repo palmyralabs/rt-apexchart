@@ -20,6 +20,7 @@ const AreaChart = () => {
 
 }
 export default AreaChart
+export { data }
 
 const data = [
     { month: 'Jan', thisYear: 31, lastYear: 24 },

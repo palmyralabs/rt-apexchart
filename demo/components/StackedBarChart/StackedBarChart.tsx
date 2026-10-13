@@ -30,6 +30,7 @@ const StackedBarChart = () => {
 
 }
 export default StackedBarChart
+export { data }
 
 const data = [
     { month: 'Jan', online: 44, retail: 13, wholesale: 11 },

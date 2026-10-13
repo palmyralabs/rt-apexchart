@@ -1,9 +1,9 @@
 import DemoCard from "../../layout/DemoCard"
-import HeatmapChart from "../../components/HeatmapChart/HeatmapChart"
+import HeatmapChart, { data } from "../../components/HeatmapChart/HeatmapChart"
 
 const HeatmapChartPage = () => {
     return (
-        <DemoCard title="Heatmap Chart" tag="Correlation"
+        <DemoCard title="Heatmap Chart" tag="Correlation" data={data}
             description="Show intensity across two categories using colour, ideal for spotting patterns in a matrix of values.">
             <HeatmapChart />
         </DemoCard>

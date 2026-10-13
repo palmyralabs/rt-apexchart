@@ -23,6 +23,7 @@ const ScatterChart = () => {
 
 }
 export default ScatterChart
+export { data }
 
 const data = [
     { x: 1, sampleA: 21, sampleB: 11 },

@@ -23,6 +23,7 @@ const RadialBarChart = () => {
 
 }
 export default RadialBarChart
+export { data }
 
 const data = [
     { label: 'Desktop', value: 76 },

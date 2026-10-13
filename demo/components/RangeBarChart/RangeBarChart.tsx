@@ -19,6 +19,7 @@ const RangeBarChart = () => {
 
 }
 export default RangeBarChart
+export { data }
 
 const data = [
     { task: 'Research', start: 1, end: 5 },

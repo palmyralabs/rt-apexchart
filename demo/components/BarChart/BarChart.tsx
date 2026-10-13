@@ -93,6 +93,7 @@ const BarChart = () => {
 
 }
 export default BarChart
+export { data }
 
 
 const data = [

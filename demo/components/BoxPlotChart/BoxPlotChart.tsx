@@ -22,6 +22,7 @@ const BoxPlotChart = () => {
 
 }
 export default BoxPlotChart
+export { data }
 
 const data = [
     { group: 'Team A', min: 12, q1: 24, median: 33, q3: 42, max: 54 },

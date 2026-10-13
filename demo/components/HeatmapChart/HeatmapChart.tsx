@@ -22,7 +22,7 @@ const HeatmapChart = () => {
                         }
                     }
                 }}
-                legend={{ position: "top" }}
+                legend={{ position: "bottom" }}
                 seriesOptions={[{ name: 'Morning' }, { name: 'Noon' }, { name: 'Evening' }, { name: 'Night' }]}
                 height="350" width="900"
             />
@@ -31,6 +31,7 @@ const HeatmapChart = () => {
 
 }
 export default HeatmapChart
+export { data }
 
 const data = [
     { day: 'Mon', morning: 12, noon: 42, evening: 58, night: 9 },

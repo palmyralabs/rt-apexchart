@@ -27,6 +27,14 @@ import RadialBarChartPage from "./pages/chart/RadialBarChartPage";
 import CandlestickChartPage from "./pages/chart/CandlestickChartPage";
 import BoxPlotChartPage from "./pages/chart/BoxPlotChartPage";
 import RangeBarChartPage from "./pages/chart/RangeBarChartPage";
+import StreamgraphChartPage from "./pages/chart/StreamgraphChartPage";
+import WaterfallChartPage from "./pages/chart/WaterfallChartPage";
+import FunnelChartPage from "./pages/chart/FunnelChartPage";
+import HistogramChartPage from "./pages/chart/HistogramChartPage";
+import SlopeChartPage from "./pages/chart/SlopeChartPage";
+import GaugeChartPage from "./pages/chart/GaugeChartPage";
+import ViolinChartPage from "./pages/chart/ViolinChartPage";
+import SunburstChartPage from "./pages/chart/SunburstChartPage";
 
 
 function App() {
@@ -61,6 +69,14 @@ function App() {
                 <Route path="candlestickChart" element={<CandlestickChartPage />} />
                 <Route path="boxPlotChart" element={<BoxPlotChartPage />} />
                 <Route path="rangeBarChart" element={<RangeBarChartPage />} />
+                <Route path="streamgraphChart" element={<StreamgraphChartPage />} />
+                <Route path="waterfallChart" element={<WaterfallChartPage />} />
+                <Route path="funnelChart" element={<FunnelChartPage />} />
+                <Route path="histogramChart" element={<HistogramChartPage />} />
+                <Route path="slopeChart" element={<SlopeChartPage />} />
+                <Route path="gaugeChart" element={<GaugeChartPage />} />
+                <Route path="violinChart" element={<ViolinChartPage />} />
+                <Route path="sunburstChart" element={<SunburstChartPage />} />
               </Route>
               <Route path="*" element={<h1>Under Construction</h1>} />
             </Route>

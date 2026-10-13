@@ -24,6 +24,7 @@ const MultiLineChart = () =>{
 }
 
 export default MultiLineChart
+export { data }
 
 const data = [
     {

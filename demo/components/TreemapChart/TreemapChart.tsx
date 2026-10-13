@@ -19,6 +19,7 @@ const TreemapChart = () => {
 
 }
 export default TreemapChart
+export { data }
 
 const data = [
     { name: 'Direct', value: 42 },
