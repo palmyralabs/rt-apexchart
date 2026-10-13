@@ -1,10 +1,12 @@
+import DemoCard from "../../layout/DemoCard"
 import BarChart from "../../components/BarChart/BarChart"
 
 const BarChartPage = () => {
     return (
-        <div>
+        <DemoCard title="Bar Chart" tag="Comparison"
+            description="Compare a single measure across discrete categories. Best for ranking and spotting the largest and smallest values.">
             <BarChart />
-        </div>
+        </DemoCard>
     )
 }
 

@@ -11,6 +11,10 @@ const generateObjectAccessors = (options: ITransformOptions): IChartConsumerOpti
         result.groupKey = getAccessor(options.groupKey);
     }
 
+    if (options.rKey) {
+        result.rKeyAccessor = getAccessor(options.rKey);
+    }
+
     return result;
 }
 

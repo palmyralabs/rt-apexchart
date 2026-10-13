@@ -8,6 +8,7 @@ const getChartConsumer = (options: IChartConsumerOptions,
     const { seriesOptions, enhanceData } = props;
     const xKeyAccessor = options.xKeyAccessor;
     const yKeyAccessors = options.yKeyAccessors;
+    const rKeyAccessor = options.rKeyAccessor;
 
     var result: ApexAxisChartSeries = [];
     const initialize = () => {
@@ -26,15 +27,20 @@ const getChartConsumer = (options: IChartConsumerOptions,
 
     const processRow = (v: any, idx: number, key?: string) => {
         const xValue = xKeyAccessor(v, key);
+        const rValue = rKeyAccessor ? rKeyAccessor(v, key) : undefined;
         yKeyAccessors.forEach((y, i) => {
             const yValue = y(v, key);
             var data: ISeriesDataType;
 
+            const base: any = rValue !== undefined
+                ? { x: xValue, y: yValue, z: rValue }
+                : { x: xValue, y: yValue };
+
             if (enhanceData) {
                 const r = enhanceData(xValue, yValue, v, i, idx, key);
-                data = { ...r, x: xValue, y: yValue }
+                data = { ...r, ...base }
             } else {
-                data = { x: xValue, y: yValue };
+                data = base;
             }
             //@ts-ignore
             result[i].data.push(data);

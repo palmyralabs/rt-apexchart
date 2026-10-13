@@ -1,0 +1,74 @@
+.demo-card {
+    background: var(--default-bgcolor, #ffffff);
+    border: 1px solid var(--border-color, rgba(128, 128, 128, 0.2));
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+    overflow: hidden;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.demo-card-header {
+    padding: 20px 24px 16px 24px;
+    border-bottom: 1px solid var(--border-color, rgba(128, 128, 128, 0.2));
+}
+
+.demo-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.demo-card-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--dark-color, #1a1a1a);
+    letter-spacing: -0.01em;
+}
+
+.demo-card-tag {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 999px;
+    color: var(--primary-color, #0c77e3);
+    background: rgba(var(--primary-color-rgb, 12, 119, 227), 0.1);
+}
+
+.demo-card-desc {
+    margin: 8px 0 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(var(--dark-color-rgb, 0, 0, 0), 0.6);
+    max-width: 760px;
+}
+
+.demo-card-body {
+    padding: 20px;
+}
+
+.demo-card-canvas {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.demo-card-canvas > div {
+    max-width: 100%;
+}
+
+@media (max-width: 640px) {
+    .demo-card-header {
+        padding: 16px;
+    }
+    .demo-card-body {
+        padding: 12px;
+    }
+    .demo-card-title {
+        font-size: 18px;
+    }
+}

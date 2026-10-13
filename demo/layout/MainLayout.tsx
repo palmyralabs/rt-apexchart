@@ -44,10 +44,12 @@ const MainLayout = (props: MainLayoutInput) => {
         component="main"
         sx={{
           flexGrow: 1,
-          padding: '10px',
+          padding: { xs: '16px', md: '28px' },
           width: `calc(100%)`,
-          minHeight: "100vh",
-          marginTop:'60px'
+          minHeight: "calc(100vh - 60px)",
+          marginTop: '60px',
+          boxSizing: 'border-box',
+          backgroundColor: 'var(--body-bgcolor, #f5f7fb)'
         }}
       >
         <Outlet />

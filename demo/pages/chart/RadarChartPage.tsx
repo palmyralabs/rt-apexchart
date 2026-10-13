@@ -1,10 +1,12 @@
+import DemoCard from "../../layout/DemoCard"
 import RadarChart from "../../components/RadarChart/RadarChart"
 
 const RadarChartPage = () => {
     return (
-        <div>
-          <RadarChart/>
-        </div>
+        <DemoCard title="Radar Chart" tag="Composition"
+            description="Compare several variables at once on shared radial axes to profile each series.">
+            <RadarChart />
+        </DemoCard>
     )
 }
 

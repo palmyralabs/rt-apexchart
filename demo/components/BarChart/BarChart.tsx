@@ -66,14 +66,6 @@ const BarChart = () => {
                     show: true,
                     position: "right"
                 }}
-                title={{
-                    text: 'Bar Chart',
-                    align: 'left',
-                    style: {
-                        fontWeight: 'bold',
-                    }
-                }}
-
                 // colors={data.map(d => d.colors)}
                 colors={['#9acd32', '#c71585', '#8a2be2', '#ff00ff', '#ff6347', '#48d1cc', '#4169e1', '#9acd32']}
 

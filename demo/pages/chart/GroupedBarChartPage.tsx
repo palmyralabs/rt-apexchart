@@ -1,11 +1,12 @@
+import DemoCard from "../../layout/DemoCard"
 import GroupedBarChart from "../../components/GroupedBarChart/GroupedBarChart"
 
 const GroupedBarChartPage = () => {
     return (
-        <div>
-        
-             <GroupedBarChart/>           
-        </div>
+        <DemoCard title="Grouped Bar Chart" tag="Comparison"
+            description="Place several series side by side within each category to compare them directly.">
+            <GroupedBarChart />
+        </DemoCard>
     )
 }
 

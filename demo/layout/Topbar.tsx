@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { AppBar, Toolbar, ClickAwayListener } from "@mui/material";
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -62,9 +63,9 @@ const Topbar: React.FC<TopbarProps> = ({ mobileOpen, setMobileOpen, display }) =
           <MenuIcon />
         </IconButton>
         <div className='topbar-avathar'>
-          <div className='topbar-text'>Home</div>
-          <div className='topbar-text'>API</div>
-          <div className='topbar-text'>Samples</div>
+          <NavLink to="/ui/home" className={({ isActive }) => `topbar-text ${isActive ? 'active' : ''}`}>Home</NavLink>
+          <NavLink to="/ui/api" className={({ isActive }) => `topbar-text ${isActive ? 'active' : ''}`}>API</NavLink>
+          <NavLink to="/ui/demo" className={({ isActive }) => `topbar-text ${isActive ? 'active' : ''}`}>Samples</NavLink>
         </div>
         {dropdownOpen && (
           <ClickAwayListener onClickAway={() => { setDropdownOpen(false) }}>

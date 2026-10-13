@@ -1,11 +1,13 @@
+import DemoCard from "../../layout/DemoCard"
 import DoughnutChart from "../../components/DonutChart/DoughnutChart"
 
 const DoughnutChartPage = () => {
     return (
-        <div>
+        <DemoCard title="Doughnut Chart" tag="Composition"
+            description="Show proportions of a total with a center cutout that keeps the slices easy to read.">
             <DoughnutChart />
-        </div>
+        </DemoCard>
     )
 }
 
-export default DoughnutChartPage    
+export default DoughnutChartPage
